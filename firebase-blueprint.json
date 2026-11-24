@@ -1,0 +1,303 @@
+{
+  "entities": {
+    "MessagingUser": {
+      "title": "MessagingUser",
+      "description": "Authenticated Firebase messaging directory profile linked to the user's Pulse creator identity.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth UID matching the document ID."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name shown in the New Chat picker and inbox."
+        },
+        "username": {
+          "type": "string",
+          "description": "Pulse handle or email-derived username."
+        },
+        "email": {
+          "type": "string",
+          "description": "Google account email address."
+        },
+        "avatarUrl": {
+          "type": "string",
+          "description": "Optional avatar photo URL."
+        },
+        "supabaseUserId": {
+          "type": "string",
+          "description": "Optional linked Supabase profile ID."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest profile sync (FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "uid",
+        "displayName",
+        "username",
+        "email",
+        "avatarUrl",
+        "supabaseUserId",
+        "updatedAt"
+      ]
+    },
+    "DmThread": {
+      "title": "DmThread",
+      "description": "Real-time 1-on-1 direct message thread summary with deterministic sorted participant IDs and per-member unread counts.",
+      "type": "object",
+      "properties": {
+        "memberUids": {
+          "type": "array",
+          "description": "Sorted two-element array of participant Firebase UIDs."
+        },
+        "participantAId": {
+          "type": "string",
+          "description": "First sorted participant Firebase UID."
+        },
+        "participantAName": {
+          "type": "string",
+          "description": "Display name of participant A."
+        },
+        "participantAUsername": {
+          "type": "string",
+          "description": "Username of participant A."
+        },
+        "participantAAvatarUrl": {
+          "type": "string",
+          "description": "Avatar URL of participant A."
+        },
+        "participantBId": {
+          "type": "string",
+          "description": "Second sorted participant Firebase UID."
+        },
+        "participantBName": {
+          "type": "string",
+          "description": "Display name of participant B."
+        },
+        "participantBUsername": {
+          "type": "string",
+          "description": "Username of participant B."
+        },
+        "participantBAvatarUrl": {
+          "type": "string",
+          "description": "Avatar URL of participant B."
+        },
+        "lastMessageText": {
+          "type": "string",
+          "description": "Preview text of the latest message in the thread."
+        },
+        "lastSenderUid": {
+          "type": "string",
+          "description": "Firebase UID of the user who sent the latest message."
+        },
+        "unreadCountA": {
+          "type": "integer",
+          "description": "Unread message count for participant A."
+        },
+        "unreadCountB": {
+          "type": "integer",
+          "description": "Unread message count for participant B."
+        },
+        "lastMessageAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest message (FieldValue.serverTimestamp())."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Immutable server timestamp when the thread was created (FieldValue.serverTimestamp())."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the last thread update (FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "memberUids",
+        "participantAId",
+        "participantAName",
+        "participantAUsername",
+        "participantAAvatarUrl",
+        "participantBId",
+        "participantBName",
+        "participantBUsername",
+        "participantBAvatarUrl",
+        "lastMessageText",
+        "lastSenderUid",
+        "unreadCountA",
+        "unreadCountB",
+        "lastMessageAt",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "DmMessage": {
+      "title": "DmMessage",
+      "description": "Individual real-time message inside a 1-on-1 conversation with read receipts and heart likes.",
+      "type": "object",
+      "properties": {
+        "threadId": {
+          "type": "string",
+          "description": "Parent dm_threads document ID."
+        },
+        "memberUids": {
+          "type": "array",
+          "description": "Denormalized two-element array of participant Firebase UIDs for zero-lookup rules."
+        },
+        "senderUid": {
+          "type": "string",
+          "description": "Firebase UID of the sender."
+        },
+        "senderUsername": {
+          "type": "string",
+          "description": "Username of the sender."
+        },
+        "senderDisplayName": {
+          "type": "string",
+          "description": "Display name of the sender."
+        },
+        "senderAvatarUrl": {
+          "type": "string",
+          "description": "Avatar URL of the sender."
+        },
+        "text": {
+          "type": "string",
+          "description": "Message body text."
+        },
+        "likedByUids": {
+          "type": "array",
+          "description": "List of participant UIDs who liked this message."
+        },
+        "readByUids": {
+          "type": "array",
+          "description": "List of participant UIDs who have seen this message."
+        },
+        "sharedPostId": {
+          "type": "string",
+          "description": "Optional Supabase post or Loop ID shared inside the message."
+        },
+        "sharedPostCaption": {
+          "type": "string",
+          "description": "Optional caption snippet of a shared post."
+        },
+        "sharedPostImageUri": {
+          "type": "string",
+          "description": "Optional preview URL of a shared post."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Immutable server timestamp when the message was sent (FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "threadId",
+        "memberUids",
+        "senderUid",
+        "senderUsername",
+        "senderDisplayName",
+        "senderAvatarUrl",
+        "text",
+        "likedByUids",
+        "readByUids",
+        "createdAt"
+      ]
+    },
+    "PostComment": {
+      "title": "PostComment",
+      "description": "Comment or threaded reply on a Pulse post or Loop stored in Firestore with like tracking.",
+      "type": "object",
+      "properties": {
+        "postId": {
+          "type": "string",
+          "description": "Parent post or Loop ID."
+        },
+        "authorUid": {
+          "type": "string",
+          "description": "Firebase Auth UID of the comment author."
+        },
+        "authorUsername": {
+          "type": "string",
+          "description": "Pulse handle of the comment author."
+        },
+        "authorDisplayName": {
+          "type": "string",
+          "description": "Display name of the comment author."
+        },
+        "authorAvatarUrl": {
+          "type": "string",
+          "description": "Optional avatar URL of the comment author."
+        },
+        "text": {
+          "type": "string",
+          "description": "Comment body text."
+        },
+        "parentCommentId": {
+          "type": "string",
+          "description": "Optional parent comment ID for threaded replies."
+        },
+        "replyToUsername": {
+          "type": "string",
+          "description": "Optional target username being replied to."
+        },
+        "likedByUids": {
+          "type": "array",
+          "description": "Bounded list of Firebase UIDs that liked this comment."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Immutable server timestamp when the comment was created (FieldValue.serverTimestamp())."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest comment edit or like update (FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "postId",
+        "authorUid",
+        "authorUsername",
+        "authorDisplayName",
+        "authorAvatarUrl",
+        "text",
+        "likedByUids",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/messaging_users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/MessagingUser"
+      },
+      "description": "Directory of authenticated Firebase messaging users for New Chat discovery."
+    },
+    "/dm_threads/{threadId}": {
+      "schema": {
+        "$ref": "#/entities/DmThread"
+      },
+      "description": "1-on-1 direct message conversation summaries scoped to memberUids."
+    },
+    "/dm_threads/{threadId}/messages/{messageId}": {
+      "schema": {
+        "$ref": "#/entities/DmMessage"
+      },
+      "description": "Real-time direct messages inside a conversation thread with denormalized memberUids."
+    },
+    "/posts/{postId}/comments/{commentId}": {
+      "schema": {
+        "$ref": "#/entities/PostComment"
+      },
+      "description": "Comments and threaded replies scoped to a specific Pulse post or Loop."
+    }
+  }
+}

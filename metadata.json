@@ -1,0 +1,6 @@
+{
+  "name": "Pulse",
+  "description": "A visual social network and photography storytelling platform with Feeds, Stories, Loops, Explore, Darkroom filters, and Direct Messages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,2754 @@
+21:30:13.794
+System
+Build
+ Render Start 
+21:30:13.794
+System
+Log
+ Build successful and cleared previous logs 
+21:30:19.194
+Android
+Log
+ 11-14 16:00:07.878 7582 I/sesocial.vqxkpm: Late-enabling -Xcheck:jni 
+21:30:19.194
+Android
+Log
+ 11-14 16:00:07.897 7582 I/sesocial.vqxkpm: Using CollectorTypeCMC GC. 
+21:30:19.194
+Android
+Debug
+ 11-14 16:00:07.902 7582 D/nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok 
+21:30:19.194
+Android
+Warning
+ 11-14 16:00:07.930 7582 W/ziparchive: Unable to open '/data/app/~~vZCjSvRGoR5qePiSUoC9sw==/com.aistudio.pulsesocial.vqxkpm-XNHVzD9FxjuD433ON5k73g==/base.dm': No such file or directory
+Unable to open '/data/app/~~vZCjSvRGoR5qePiSUoC9sw==/com.aistudio.pulsesocial.vqxkpm-XNHVzD9FxjuD433ON5k73g==/base.dm': No such file or directory 
+21:30:19.194
+Android
+Debug
+ 11-14 16:00:08.602 7582 D/nativeloader: Configuring clns-7 for other apk /data/app/~~vZCjSvRGoR5qePiSUoC9sw==/com.aistudio.pulsesocial.vqxkpm-XNHVzD9FxjuD433ON5k73g==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~vZCjSvRGoR5qePiSUoC9sw==/com.aistudio.pulsesocial.vqxkpm-XNHVzD9FxjuD433ON5k73g==/lib/arm64:/data/app/~~vZCjSvRGoR5qePiSUoC9sw==/com.aistudio.pulsesocial.vqxkpm-XNHVzD9FxjuD433ON5k73g==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.aistudio.pulsesocial.vqxkpm 
+21:30:19.194
+Android
+Debug
+ 11-14 16:00:08.615 7582 V/GraphicsEnvironment: Currently set values for:
+angle_gl_driver_selection_pkgs=[]
+angle_gl_driver_selection_values=[]
+Global.Settings values are invalid: number of packages: 0, number of values: 0
+Neither updatable production driver nor prerelease driver is supported. 
+21:30:19.194
+Android
+Warning
+ 11-14 16:00:08.725 7582 W/HWUI    : Unknown dataspace 0 
+21:30:19.194
+Android
+Log
+ 11-14 16:00:08.928 7582 I/sesocial.vqxkpm: Compiler allocated 5250KB to compile void android.view.ViewRootImpl.performTraversals() 
+21:30:19.194
+Android
+Log
+ 11-14 16:00:09.101 7582 I/EGL_emulation: Opening libGLESv1_CM_emulation.so
+Opening libGLESv2_emulation.so 
+21:30:19.194
+Android
+Warning
+ 11-14 16:00:09.112 7582 W/HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+Failed to initialize 101010-2 format, error = EGL_SUCCESS 
+21:30:19.194
+Android
+Log
+ 11-14 16:00:09.161 7582 I/Gralloc4: mapper 4.x is not supported 
+21:30:19.194
+Android
+Debug
+ 11-14 16:00:09.535 7582 D/TrafficStats: tagSocket(124) with statsTag=0xffffffff, statsUid=-1 
+21:30:19.194
+Android
+Log
+ 11-14 16:00:12.935 7582 I/sesocial.vqxkpm: JIT allocated 50KB for compiled code of java.lang.Object com.example.data.repository.PulseRepository.refreshFromSupabase-gIAlu-s(int, kotlin.coroutines.Continuation) 
+21:30:19.194
+Android
+Log
+ 11-14 16:00:12.936 7582 I/sesocial.vqxkpm: Compiler allocated 5424KB to compile java.lang.Object com.example.data.repository.PulseRepository.refreshFromSupabase-gIAlu-s(int, kotlin.coroutines.Continuation) 
+21:30:19.194
+Android
+Debug
+ 11-14 16:00:13.821 7582 D/ProfileInstaller: Installing profile for com.aistudio.pulsesocial.vqxkpm 
+21:30:38.993
+Android
+Debug
+ 11-14 16:00:29.558 7582 D/EGL_emulation: app_time_stats: avg=6766.70ms min=13.53ms max=19997.45ms count=3 
+21:30:38.993
+Android
+Debug
+ 11-14 16:00:33.587 7582 D/InsetsController: show(ime(), fromIme=false) 
+21:30:38.993
+Android
+Log
+ 11-14 16:00:33.588 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:abd86c49: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false 
+21:30:38.993
+Android
+Debug
+ 11-14 16:00:33.591 7582 D/InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{8c96b20 VFED..... .F....ID 0,0-1080,2400 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API 
+21:30:38.993
+Android
+Debug
+ 11-14 16:00:33.599 7582 D/EGL_emulation: app_time_stats: avg=1339.39ms min=13.12ms max=3768.05ms count=3 
+21:30:38.993
+Android
+Log
+ 11-14 16:00:33.607 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:3028e371: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false 
+21:30:38.993
+Android
+Debug
+ 11-14 16:00:33.610 7582 D/InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{8c96b20 VFED..... .F...... 0,0-1080,2400 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT 
+21:30:38.993
+Android
+Debug
+ 11-14 16:00:34.039 7582 D/InsetsController: show(ime(), fromIme=true) 
+21:30:38.993
+Android
+Debug
+ 11-14 16:00:34.040 7582 D/InsetsController: show(ime(), fromIme=true) 
+21:30:38.993
+Android
+Log
+ 11-14 16:00:34.040 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:3028e371: onCancelled at PHASE_CLIENT_APPLY_ANIMATION 
+21:30:38.993
+Android
+Warning
+ 11-14 16:00:34.125 7582 W/InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=true, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.aistudio.pulsesocial.vqxkpm 
+21:30:38.993
+Android
+Log
+ 11-14 16:00:34.446 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:abd86c49: onShown 
+21:30:38.993
+Android
+Debug
+ 11-14 16:00:34.638 7582 D/EGL_emulation: app_time_stats: avg=41.45ms min=8.30ms max=303.27ms count=19 
+21:30:38.993
+Android
+Debug
+ 11-14 16:00:35.659 7582 D/EGL_emulation: app_time_stats: avg=510.36ms min=501.16ms max=519.56ms count=2 
+21:30:59.007
+Android
+Debug
+ 11-14 16:00:36.662 7582 D/EGL_emulation: app_time_stats: avg=501.73ms min=497.94ms max=505.52ms count=2 
+21:30:59.007
+Android
+Debug
+ 11-14 16:00:37.975 7582 D/EGL_emulation: app_time_stats: avg=251.25ms min=11.42ms max=501.03ms count=5 
+21:30:59.007
+Android
+Debug
+ 11-14 16:00:39.082 7582 D/EGL_emulation: app_time_stats: avg=369.14ms min=110.41ms max=501.81ms count=3 
+21:30:59.007
+Android
+Debug
+ 11-14 16:00:40.523 7582 D/EGL_emulation: app_time_stats: avg=107.01ms min=10.96ms max=517.56ms count=12 
+21:30:59.007
+Android
+Debug
+ 11-14 16:00:41.524 7582 D/EGL_emulation: app_time_stats: avg=500.23ms min=493.42ms max=507.04ms count=2 
+21:30:59.007
+Android
+Debug
+ 11-14 16:00:42.614 7582 D/EGL_emulation: app_time_stats: avg=115.17ms min=12.17ms max=342.65ms count=9 
+21:30:59.007
+Android
+Debug
+ 11-14 16:00:43.691 7582 D/EGL_emulation: app_time_stats: avg=90.02ms min=11.99ms max=313.03ms count=11 
+21:30:59.007
+Android
+Debug
+ 11-14 16:00:44.707 7582 D/EGL_emulation: app_time_stats: avg=89.50ms min=10.84ms max=352.08ms count=10 
+21:30:59.007
+Android
+Debug
+ 11-14 16:00:45.738 7582 D/EGL_emulation: app_time_stats: avg=201.66ms min=13.42ms max=496.21ms count=5 
+21:30:59.007
+Android
+Debug
+ 11-14 16:00:47.098 7582 D/EGL_emulation: app_time_stats: avg=186.25ms min=11.90ms max=459.10ms count=7 
+21:30:59.007
+Android
+Debug
+ 11-14 16:00:48.591 7582 D/EGL_emulation: app_time_stats: avg=497.64ms min=490.67ms max=505.52ms count=3 
+21:30:59.007
+Android
+Debug
+ 11-14 16:00:49.775 7582 D/EGL_emulation: app_time_stats: avg=136.38ms min=12.22ms max=498.01ms count=8 
+21:30:59.007
+Android
+Debug
+ 11-14 16:00:51.113 7582 D/InsetsController: show(ime(), fromIme=false) 
+21:30:59.007
+Android
+Log
+ 11-14 16:00:51.113 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:30748293: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+com.aistudio.pulsesocial.vqxkpm:30748293: onCancelled at PHASE_CLIENT_APPLY_ANIMATION 
+21:30:59.008
+Android
+Debug
+ 11-14 16:00:51.119 7582 D/EGL_emulation: app_time_stats: avg=184.03ms min=13.02ms max=443.08ms count=7 
+21:30:59.008
+Android
+Log
+ 11-14 16:00:51.125 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:902a8c94: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false 
+21:30:59.008
+Android
+Debug
+ 11-14 16:00:51.125 7582 D/InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{8c96b20 VFED..... .F....ID 0,0-1080,2400 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT 
+21:30:59.008
+Android
+Debug
+ 11-14 16:00:51.344 7582 D/InsetsController: show(ime(), fromIme=true) 
+21:30:59.008
+Android
+Log
+ 11-14 16:00:51.344 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:228d16d5: onCancelled at PHASE_CLIENT_APPLY_ANIMATION 
+21:30:59.008
+Android
+Debug
+ 11-14 16:00:51.344 7582 D/InsetsController: show(ime(), fromIme=true) 
+21:30:59.008
+Android
+Log
+ 11-14 16:00:51.344 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:902a8c94: onCancelled at PHASE_CLIENT_APPLY_ANIMATION 
+21:30:59.008
+Android
+Debug
+ 11-14 16:00:52.142 7582 D/EGL_emulation: app_time_stats: avg=88.91ms min=13.16ms max=501.26ms count=10 
+21:30:59.008
+Android
+Debug
+ 11-14 16:00:53.107 7582 D/InsetsController: show(ime(), fromIme=false) 
+21:30:59.008
+Android
+Log
+ 11-14 16:00:53.108 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:a6ccca0f: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+com.aistudio.pulsesocial.vqxkpm:a6ccca0f: onCancelled at PHASE_CLIENT_APPLY_ANIMATION 
+21:30:59.008
+Android
+Log
+ 11-14 16:00:53.112 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:457d10d6: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false 
+21:30:59.008
+Android
+Debug
+ 11-14 16:00:53.112 7582 D/InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{8c96b20 VFED..... .F...... 0,0-1080,2400 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT 
+21:30:59.008
+Android
+Debug
+ 11-14 16:00:53.116 7582 D/InsetsController: show(ime(), fromIme=true) 
+21:30:59.008
+Android
+Log
+ 11-14 16:00:53.116 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:457d10d6: onCancelled at PHASE_CLIENT_APPLY_ANIMATION 
+21:30:59.008
+Android
+Debug
+ 11-14 16:00:53.156 7582 D/EGL_emulation: app_time_stats: avg=337.95ms min=43.00ms max=498.87ms count=3 
+21:30:59.008
+Android
+Debug
+ 11-14 16:00:54.462 7582 D/EGL_emulation: app_time_stats: avg=317.70ms min=21.10ms max=453.90ms count=4 
+21:30:59.008
+Android
+Debug
+ 11-14 16:00:55.567 7582 D/EGL_emulation: app_time_stats: avg=97.02ms min=10.98ms max=447.10ms count=10 
+21:31:19.131
+Android
+Debug
+ 11-14 16:00:56.791 7582 D/EGL_emulation: app_time_stats: avg=138.37ms min=10.68ms max=472.09ms count=8 
+21:31:19.131
+Android
+Debug
+ 11-14 16:00:57.805 7582 D/EGL_emulation: app_time_stats: avg=506.79ms min=504.94ms max=508.64ms count=2 
+21:31:19.131
+Android
+Debug
+ 11-14 16:00:59.309 7582 D/EGL_emulation: app_time_stats: avg=501.37ms min=495.86ms max=504.55ms count=3 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:00.325 7582 D/EGL_emulation: app_time_stats: avg=507.63ms min=501.71ms max=513.54ms count=2 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:01.329 7582 D/EGL_emulation: app_time_stats: avg=502.36ms min=500.91ms max=503.82ms count=2 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:02.821 7582 D/EGL_emulation: app_time_stats: avg=497.12ms min=495.38ms max=498.00ms count=3 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:03.841 7582 D/EGL_emulation: app_time_stats: avg=510.08ms min=504.83ms max=515.33ms count=2 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:04.872 7582 D/EGL_emulation: app_time_stats: avg=66.15ms min=9.28ms max=508.38ms count=13 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:06.371 7582 D/EGL_emulation: app_time_stats: avg=59.20ms min=1.51ms max=511.90ms count=20 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:07.375 7582 D/EGL_emulation: app_time_stats: avg=31.88ms min=5.75ms max=300.63ms count=21 
+21:31:19.131
+Android
+Log
+ 11-14 16:01:08.076 7582 I/sesocial.vqxkpm: Compiler allocated 4161KB to compile kotlin.Unit com.example.MainActivityKt.PulseAppShell$lambda$177$lambda$176$lambda$169(com.example.ui.viewmodel.PulseViewModel, kotlin.jvm.functions.Function1, androidx.compose.foundation.pager.PagerState, androidx.compose.runtime.State, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.foundation.pager.PagerScope, int, androidx.compose.runtime.Composer, int) 
+21:31:19.131
+Android
+Log
+ 11-14 16:01:08.114 7582 I/sesocial.vqxkpm: Compiler allocated 10033KB to compile void com.example.ui.screens.FeedScreenKt.FeedScreen(com.example.data.model.UserProfileState, boolean, boolean, boolean, boolean, com.example.data.model.FeedMode, java.util.List, java.util.List, java.util.Map, int, int, java.util.List, java.lang.String, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function2, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function2, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function2, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, boolean, androidx.compose.ui.Modifier, androidx.compose.runtime.Composer, int, int, int, int, int, int) 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:08.150 7582 D/TrafficStats: tagSocket(143) with statsTag=0xffffffff, statsUid=-1 
+21:31:19.131
+Android
+Log
+ 11-14 16:01:08.188 7582 I/sesocial.vqxkpm: Compiler allocated 5865KB to compile void com.example.ui.components.PulseMediaComponentsKt.PulseFilteredImage(int, java.lang.String, java.lang.String, com.example.data.model.FilmPreset, java.lang.String, androidx.compose.ui.Modifier, androidx.compose.ui.layout.ContentScale, boolean, boolean, boolean, boolean, java.lang.Boolean, kotlin.jvm.functions.Function0, float, float, float, float, float, float, float, boolean, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, androidx.compose.runtime.Composer, int, int, int, int) 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:08.281 7582 D/InsetsController: hide(ime(), fromIme=false) 
+21:31:19.131
+Android
+Log
+ 11-14 16:01:08.282 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:fdc3d528: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_BY_INSETS_API fromUser false 
+21:31:19.131
+Android
+Log
+ 11-14 16:01:08.284 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:9fe9e948: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_REQUEST_HIDE_WITH_CONTROL fromUser false 
+21:31:19.131
+Android
+Log
+ 11-14 16:01:08.710 7582 I/HWUI    : Davey! duration=708ms; Flags=0, FrameTimelineVsyncId=35610, IntendedVsync=1671161039299, Vsync=1671227705963, InputEventId=0, HandleInputStart=1671240248462, AnimationStart=1671240249378, PerformTraversalsStart=1671249659462, DrawStart=1671402311503, FrameDeadline=1671244372629, FrameInterval=1671240244753, FrameStartTime=16666666, SyncQueued=1671418295503, SyncStart=1671418495670, IssueDrawCommandsStart=1671418627837, SwapBuffers=1671495353045, FrameCompleted=1671870131587, DequeueBufferDuration=1541, QueueBufferDuration=223750, GpuCompleted=1671870131587, SwapBuffersCompleted=1671496812545, DisplayPresentTime=0, CommandSubmissionCompleted=1671495353045,  
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:08.741 7582 D/EGL_emulation: app_time_stats: avg=43.99ms min=4.30ms max=453.39ms count=23 
+21:31:19.131
+Android
+Warning
+ 11-14 16:01:08.742 7582 W/RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:08.742 7582 D/InsetsController: hide(ime(), fromIme=true) 
+21:31:19.131
+Android
+Log
+ 11-14 16:01:08.742 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:9fe9e948: onCancelled at PHASE_CLIENT_APPLY_ANIMATION 
+21:31:19.131
+Android
+Log
+ 11-14 16:01:08.752 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:2bc7727c: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false 
+21:31:19.131
+Android
+Log
+ 11-14 16:01:08.753 7582 I/ImeTracker: com.aistudio.pulsesocial.vqxkpm:fdc3d528: onHidden 
+21:31:19.131
+Android
+Log
+ 11-14 16:01:08.820 7582 I/HWUI    : Davey! duration=763ms; Flags=0, FrameTimelineVsyncId=35619, IntendedVsync=1671244372629, Vsync=1671427705955, InputEventId=0, HandleInputStart=1671435467503, AnimationStart=1671435468503, PerformTraversalsStart=1671494803295, DrawStart=1671502007878, FrameDeadline=1671894372603, FrameInterval=1671434445253, FrameStartTime=16666666, SyncQueued=1671503840253, SyncStart=1671503867503, IssueDrawCommandsStart=1671503943170, SwapBuffers=1671949745170, FrameCompleted=1672007816045, DequeueBufferDuration=2000, QueueBufferDuration=81459, GpuCompleted=1672007816045, SwapBuffersCompleted=1671950214337, DisplayPresentTime=0, CommandSubmissionCompleted=1671949745170,  
+21:31:19.131
+Android
+Warning
+ 11-14 16:01:08.822 7582 W/WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=ImeCallback=ImeOnBackInvokedCallback@201809662 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@14c28a9 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:09.749 7582 D/EGL_emulation: app_time_stats: avg=10.12ms min=1.42ms max=69.52ms count=44 
+21:31:19.131
+Android
+Warning
+ 11-14 16:01:10.088 7582 W/HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without... 
+21:31:19.131
+Android
+Warning
+ 11-14 16:01:10.089 7582 W/HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:10.768 7582 D/EGL_emulation: app_time_stats: avg=9.71ms min=1.13ms max=42.88ms count=44 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:11.783 7582 D/EGL_emulation: app_time_stats: avg=8.51ms min=1.04ms max=36.55ms count=45 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:12.784 7582 D/EGL_emulation: app_time_stats: avg=8.70ms min=1.10ms max=36.34ms count=44 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:13.816 7582 D/EGL_emulation: app_time_stats: avg=8.08ms min=1.33ms max=13.23ms count=47 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:14.841 7582 D/EGL_emulation: app_time_stats: avg=8.52ms min=1.14ms max=26.85ms count=46 
+21:31:19.131
+Android
+Debug
+ 11-14 16:01:15.850 7582 D/EGL_emulation: app_time_stats: avg=8.09ms min=1.08ms max=37.49ms count=46 
+21:31:39.005
+Android
+Debug
+ 11-14 16:01:16.863 7582 D/EGL_emulation: app_time_stats: avg=8.38ms min=1.11ms max=21.60ms count=45 
+21:31:39.005
+Android
+Debug
+ 11-14 16:01:18.120 7582 D/EGL_emulation: app_time_stats: avg=25.84ms min=1.27ms max=513.02ms count=32 
+21:31:39.005
+Android
+Log
+ 11-14 16:01:18.152 7582 I/Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread. 
+21:31:39.005
+Android
+Debug
+ 11-14 16:01:31.162 7582 D/EGL_emulation: app_time_stats: avg=640.56ms min=1.50ms max=12379.24ms count=20 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:47.550 7582 D/EGL_emulation: app_time_stats: avg=697.22ms min=2.40ms max=15825.95ms count=23 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:47.579 7582 I/ExoPlayerImpl: Init 380116f [AndroidXMedia3/1.5.1] [emu64a, sdk_gphone64_arm64, Google, 35] 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:47.583 7582 I/sesocial.vqxkpm: Compiler allocated 7466KB to compile void com.example.ui.components.PulseMediaComponentsKt.PulseVideoPlayer(java.lang.String, int, java.lang.String, java.lang.String, boolean, boolean, boolean, java.lang.Boolean, kotlin.jvm.functions.Function0, androidx.compose.ui.Modifier, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, androidx.compose.runtime.Composer, int, int, int) 
+21:31:59.051
+Android
+Warning
+ 11-14 16:01:47.607 7582 W/sesocial.vqxkpm: Accessing hidden method Landroid/media/AudioTrack;->getLatency()I (unsupported, reflection, allowed) 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:47.655 7582 I/sesocial.vqxkpm: Compiler allocated 7279KB to compile void com.example.ui.components.PulseMediaComponentsKt.PulseVideoPlayer(java.lang.String, int, java.lang.String, java.lang.String, boolean, boolean, boolean, java.lang.Boolean, kotlin.jvm.functions.Function0, androidx.compose.ui.Modifier, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, androidx.compose.runtime.Composer, int, int, int) 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:48.565 7582 D/EGL_emulation: app_time_stats: avg=13.39ms min=1.36ms max=112.43ms count=38 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:49.566 7582 D/EGL_emulation: app_time_stats: avg=7.61ms min=1.23ms max=15.70ms count=45 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:50.572 7582 D/EGL_emulation: app_time_stats: avg=8.81ms min=1.17ms max=18.17ms count=44 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:51.586 7582 D/EGL_emulation: app_time_stats: avg=9.96ms min=1.43ms max=20.67ms count=44 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:52.594 7582 D/EGL_emulation: app_time_stats: avg=8.81ms min=1.20ms max=24.38ms count=44 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.554 7582 D/MediaCodecInfo: NoSupport [sizeAndRate.cover, 720x1280@59.94005584716797] [c2.goldfish.h264.decoder, video/avc] [emu64a, sdk_gphone64_arm64, Google, 35]
+NoSupport [sizeAndRate.cover, 720x1280@59.94005584716797] [c2.goldfish.h264.decoder, video/avc] [emu64a, sdk_gphone64_arm64, Google, 35] 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.584 7582 I/DMCodecAdapterFactory: Creating an asynchronous MediaCodec adapter for track type video 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.593 7582 D/CCodec  : allocate(c2.goldfish.h264.decoder) 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.597 7582 I/Codec2Client: Available Codec2 services: "default" "software" 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.600 7582 D/EGL_emulation: app_time_stats: avg=9.99ms min=1.15ms max=23.35ms count=43 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.605 7582 I/CCodec  : setting up 'default' as default (vendor) store 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.633 7582 I/CCodec  : Created component [c2.goldfish.h264.decoder] 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.635 7582 D/CCodecConfig: read media type: video/avc 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.635 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+extent() != 1 for single value type: output.subscribed-indices.values
+extent() != 1 for single value type: input.buffers.allocator-ids.values
+extent() != 1 for single value type: output.buffers.allocator-ids.values 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.636 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+extent() != 1 for single value type: output.buffers.pool-ids.values
+extent() != 1 for single value type: algo.buffers.pool-ids.values
+ignored struct field coded.color-format.locations 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.636 7582 D/CCodecConfig: ignoring local param raw.size (0xd2001800) as it is already supported
+ignoring local param default.color (0x5200180b) as it is already supported 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.636 7582 D/ReflectedParamUpdater: ignored struct field raw.hdr-static-info.mastering 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.637 7582 I/CCodecConfig: query failed after returning 12 values (BAD_INDEX) 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.637 7582 D/CCodecConfig: c2 config diff is Dict {
+c2::u32 coded.pl.level = 20496
+c2::u32 coded.pl.profile = 20481
+c2::u32 coded.vui.color.matrix = 0
+c2::u32 coded.vui.color.primaries = 0
+c2::u32 coded.vui.color.range = 2
+c2::u32 coded.vui.color.transfer = 0
+c2::u32 default.color.matrix = 0
+c2::u32 default.color.primaries = 0
+c2::u32 default.color.range = 0
+c2::u32 default.color.transfer = 0
+c2::u32 input.buffers.max-size.value = 6291456
+c2::u32 input.delay.value = 0
+string input.media-type.value = "video/avc"
+c2::u32 output.delay.value = 8
+string output.media-type.value = "video/raw"
+c2::u32 raw.color.matrix = 0
+c2::u32 raw.color.primaries = 0
+c2::u32 raw.color.range = 2
+c2::u32 raw.color.transfer = 0
+c2::u32 raw.max-size.height = 240
+c2::u32 raw.max-size.width = 320
+c2::u32 raw.pixel-format.value = 35
+c2::i32 raw.rotation.flip = 0
+c2::i32 raw.rotation.value = 0
+c2::u32 raw.sar.height = 1
+c2::u32 raw.sar.width = 1
+c2::u32 raw.size.height = 240
+c2::u32 raw.size.width = 320
+c2: 
+21:31:59.051
+Android
+Warning
+ 11-14 16:01:53.637 7582 W/ColorUtils: expected specified color aspects (2:0:0:0) 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.647 7582 I/MediaCodec: MediaCodec will operate in async mode 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.648 7582 D/SurfaceUtils: connecting to surface 0xb40000701cf3c220, reason connectToSurface 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.648 7582 I/MediaCodec: [c2.goldfish.h264.decoder] setting surface generation to 7763969 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.648 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf3c220, reason connectToSurface(reconnect)
+connecting to surface 0xb40000701cf3c210, reason connectToSurface(reconnect-with-listener) 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.648 7582 D/CCodec  : [c2.goldfish.h264.decoder] buffers are bound to CCodec for this session 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.648 7582 D/CCodecConfig: no c2 equivalents for log-session-id
+no c2 equivalents for importance
+no c2 equivalents for csd-1
+no c2 equivalents for native-window
+no c2 equivalents for native-window-generation
+no c2 equivalents for flags 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.649 7582 D/CCodecConfig: config failed => CORRUPTED
+c2 config diff is   c2::u32 raw.max-size.height = 1280
+c2::u32 raw.max-size.width = 720
+c2::u32 raw.size.height = 1280
+c2::u32 raw.size.width = 720 
+21:31:59.051
+Android
+Warning
+ 11-14 16:01:53.650 7582 W/Codec2Client: query -- param skipped: index = 1107298332. 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.650 7582 D/CCodec  : client requested max input size 97326, which is smaller than what component recommended (6291456); overriding with component recommendation. 
+21:31:59.051
+Android
+Warning
+ 11-14 16:01:53.650 7582 W/CCodec  : This behavior is subject to change. It is recommended that app developers double check whether the requested max input size is in reasonable range. 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.650 7582 D/CCodec  : encoding statistics level = 0
+setup formats input: AMessage(what = 0x00000000) = {
+int32_t height = 1280
+int32_t level = 65536
+int32_t max-input-size = 6291456
+string mime = "video/avc"
+int32_t profile = 65536
+int32_t width = 720
+Rect crop(0, 0, 719, 1279)
+}
+setup formats output: AMessage(what = 0x00000000) = {
+int32_t android._color-format = 2135033992
+int32_t android._video-scaling = 1
+int32_t rotation-degrees = 0
+int32_t color-standard = 1
+int32_t color-range = 2
+int32_t color-transfer = 3
+int32_t sar-height = 1
+int32_t sar-width = 1
+Rect crop(0, 0, 719, 1279)
+int32_t width = 720
+int32_t height = 1280
+int32_t max-height = 1280
+int32_t max-width = 720
+string mime = "video/raw"
+int32_t android._dataspace = 260
+int32_t color-format = 2130708361
+} 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.650 7582 I/CCodecConfig: query failed after returning 12 values (BAD_INDEX) 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.652 7582 D/MediaCodec: keep callback message for reclaim 
+21:31:59.051
+Android
+Warning
+ 11-14 16:01:53.653 7582 W/Codec2Client: query -- param skipped: index = 1342179345.
+query -- param skipped: index = 2415921170.
+query -- param skipped: index = 1610614798.
+query -- param skipped: index = 2684356609. 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.653 7582 D/C2Store : Using DMABUF Heaps 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.654 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#417] Created input block pool with allocatorID 16 => poolID 17 - OK (0) 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.660 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#417] Query output surface allocator returned 0 params => BAD_INDEX (6) 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.661 7582 I/CCodecBufferChannel: [c2.goldfish.h264.decoder#417] Created output block pool with allocatorID 18 => poolID 17 - OK 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.661 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#417] Configured output block pool ids 17 => OK 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.662 7582 D/Codec2-OutputBufferQueue: remote graphic buffer migration 0/0 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.662 7582 D/Codec2Client: setOutputSurface -- failed to set consumer usage (6/BAD_INDEX)
+setOutputSurface -- generation=7763969 consumer usage=0x900 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.692 7582 D/Codec2Client: Surface configure completed 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.692 7582 I/DMABUFHEAPS: Using DMA-BUF heap named: system 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.714 7582 D/MediaCodecInfo: NoSupport [sizeAndRate.cover, 720x1280@59.94005584716797] [c2.goldfish.h264.decoder, video/avc] [emu64a, sdk_gphone64_arm64, Google, 35] 
+21:31:59.051
+Android
+Warning
+ 11-14 16:01:53.716 7582 W/MediaCodecRenderer: Format exceeds selected codec's capabilities [id=1, mimeType=video/avc, codecs=avc1.4D4020, res=720x1280, color=NA/NA/NA/8/8, fps=59.940056, c2.goldfish.h264.decoder] 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.718 7582 I/DMCodecAdapterFactory: Creating an asynchronous MediaCodec adapter for track type audio 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.725 7582 D/CCodec  : allocate(c2.android.aac.decoder) 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.726 7582 I/CCodec  : setting up 'default' as default (vendor) store 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.828 7582 I/CCodec  : Created component [c2.android.aac.decoder] 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.828 7582 D/CCodecConfig: read media type: audio/mp4a-latm 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.829 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+extent() != 1 for single value type: output.subscribed-indices.values
+extent() != 1 for single value type: input.buffers.allocator-ids.values
+extent() != 1 for single value type: output.buffers.allocator-ids.values
+extent() != 1 for single value type: algo.buffers.allocator-ids.values
+extent() != 1 for single value type: output.buffers.pool-ids.values
+extent() != 1 for single value type: algo.buffers.pool-ids.values 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.830 7582 I/CCodecConfig: query failed after returning 21 values (BAD_INDEX) 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.830 7582 D/CCodecConfig: c2 config diff is Dict {
+c2::u32 coded.aac-packaging.value = 0
+c2::u32 coded.bitrate.value = 64000
+c2::u32 coded.pl.level = 0
+c2::u32 coded.pl.profile = 8192
+c2::i32 coding.drc.album-mode.value = 0
+c2::float coding.drc.attenuation-factor.value = 1
+c2::float coding.drc.boost-factor.value = 1
+c2::i32 coding.drc.compression-mode.value = 3
+c2::i32 coding.drc.effect-type.value = 3
+c2::float coding.drc.encoded-level.value = 0.25
+c2::float coding.drc.reference-level.value = -16
+c2::u32 input.buffers.max-size.value = 8192
+c2::u32 input.delay.value = 0
+string input.media-type.value = "audio/mp4a-latm"
+c2::u32 output.delay.value = 2
+c2::float output.drc.output-loudness.value = 0.25
+c2::u32 output.large-frame.max-size = 0
+c2::u32 output.large-frame.threshold-size = 0
+string output.media-type.value = "audio/raw"
+c2::u32 raw.channel-count.value = 1
+c2::u32 raw.channel-mask.value = 0
+c2::u32 raw.max-channel-count.value = 8
+c2::u32 raw.sample-rate.value = 44100
+} 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.838 7582 I/MediaCodec: MediaCodec will operate in async mode 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.838 7582 D/CCodec  : [c2.android.aac.decoder] buffers are bound to CCodec for this session 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.838 7582 D/CCodecConfig: no c2 equivalents for log-session-id
+no c2 equivalents for importance
+no c2 equivalents for flags 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.844 7582 D/CCodecConfig: config failed => CORRUPTED
+c2 config diff is   c2::u32 raw.channel-count.value = 2 
+21:31:59.051
+Android
+Warning
+ 11-14 16:01:53.844 7582 W/Codec2Client: query -- param skipped: index = 1107298332. 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.844 7582 D/CCodec  : client requested max input size 663, which is smaller than what component recommended (8192); overriding with component recommendation. 
+21:31:59.051
+Android
+Warning
+ 11-14 16:01:53.844 7582 W/CCodec  : This behavior is subject to change. It is recommended that app developers double check whether the requested max input size is in reasonable range. 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.844 7582 D/CCodec  : encoding statistics level = 0
+setup formats input: AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 64
+int32_t bitrate = 64000
+int32_t channel-count = 2
+int32_t channel-mask = 0
+int32_t level = 0
+int32_t max-input-size = 8192
+int32_t max-output-channel-count = 8
+string mime = "audio/mp4a-latm"
+int32_t profile = 2
+int32_t sample-rate = 44100
+}
+setup formats output: AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-drc-output-loudness = -1
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 64
+int32_t buffer-batch-max-output-size = 0
+int32_t buffer-batch-threshold-output-size = 0
+int32_t channel-count = 2
+int32_t channel-mask = 0
+int32_t max-output-channel-count = 8
+string mime = "audio/raw"
+int32_t sample-rate = 44100
+int32_t android._config-pcm-encoding = 2
+} 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.844 7582 I/CCodecConfig: query failed after returning 21 values (BAD_INDEX) 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.845 7582 D/MediaCodec: keep callback message for reclaim 
+21:31:59.051
+Android
+Warning
+ 11-14 16:01:53.852 7582 W/Codec2Client: query -- param skipped: index = 1342179345.
+query -- param skipped: index = 2415921170.
+query -- param skipped: index = 1610614798. 
+21:31:59.051
+Android
+Debug
+ 11-14 16:01:53.853 7582 D/CCodecBufferChannel: [c2.android.aac.decoder#785] Created input block pool with allocatorID 16 => poolID 18 - OK (0) 
+21:31:59.051
+Android
+Log
+ 11-14 16:01:53.857 7582 I/CCodecBufferChannel: [c2.android.aac.decoder#785] Created output block pool with allocatorID 16 => poolID 36 - OK 
+21:31:59.052
+Android
+Debug
+ 11-14 16:01:53.858 7582 D/CCodecBufferChannel: [c2.android.aac.decoder#785] Configured output block pool ids 36 => OK 
+21:31:59.052
+Android
+Debug
+ 11-14 16:01:53.869 7582 D/CCodecConfig: c2 config diff is   c2::u32 raw.channel-mask.value = 12 
+21:31:59.052
+Android
+Debug
+ 11-14 16:01:53.869 7582 D/CCodecBuffers: [c2.android.aac.decoder#785:Output[N]] popFromStashAndRegister: at 1000000000000us, output format changed to AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-drc-output-loudness = -1
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 64
+int32_t buffer-batch-max-output-size = 0
+int32_t buffer-batch-threshold-output-size = 0
+int32_t channel-count = 2
+int32_t channel-mask = 12
+int32_t max-output-channel-count = 8
+string mime = "audio/raw"
+int32_t sample-rate = 44100
+int32_t android._config-pcm-encoding = 2
+} 
+21:31:59.052
+Android
+Debug
+ 11-14 16:01:53.992 7582 D/CCodecConfig: c2 config diff is   c2::u32 raw.crop.height = 1280
+c2::u32 raw.crop.left = 0
+c2::u32 raw.crop.top = 0
+c2::u32 raw.crop.width = 720 
+21:31:59.052
+Android
+Debug
+ 11-14 16:01:54.084 7582 D/CCodecConfig: c2 config diff is   c2::float coding.drc.reference-level.value = -24 
+21:31:59.052
+Android
+Debug
+ 11-14 16:01:54.084 7582 D/CCodecBuffers: [c2.android.aac.decoder#785:Output[N]] popFromStashAndRegister: at 1000000092879us, output format changed to AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-drc-output-loudness = -1
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 96
+int32_t buffer-batch-max-output-size = 0
+int32_t buffer-batch-threshold-output-size = 0
+int32_t channel-count = 2
+int32_t channel-mask = 12
+int32_t max-output-channel-count = 8
+string mime = "audio/raw"
+int32_t sample-rate = 44100
+int32_t android._config-pcm-encoding = 2
+} 
+21:31:59.052
+Android
+Warning
+ 11-14 16:01:54.163 7582 W/sesocial.vqxkpm: Suspending all threads took: 34.813ms 
+21:31:59.052
+Android
+Debug
+ 11-14 16:01:54.201 7582 D/AudioTrack: getTimestamp_l(22): device stall time corrected using current time 1717410263109 
+21:31:59.052
+Android
+Log
+ 11-14 16:01:54.221 7582 I/sesocial.vqxkpm: Background concurrent mark compact GC freed 3174KB AllocSpace bytes, 11(348KB) LOS objects, 49% free, 17MB/34MB, paused 35.912ms,1.684ms total 138.835ms 
+21:31:59.052
+Android
+Debug
+ 11-14 16:01:54.626 7582 D/EGL_emulation: app_time_stats: avg=22.63ms min=1.39ms max=120.14ms count=29 
+21:31:59.052
+Android
+Debug
+ 11-14 16:01:55.653 7582 D/EGL_emulation: app_time_stats: avg=18.58ms min=4.10ms max=73.21ms count=36 
+21:31:59.052
+Android
+Debug
+ 11-14 16:01:56.260 7582 D/MediaCodecInfo: NoSupport [sizeAndRate.cover, 720x1280@59.94005584716797] [c2.goldfish.h264.decoder, video/avc] [emu64a, sdk_gphone64_arm64, Google, 35]
+NoSupport [sizeAndRate.cover, 720x1280@59.94005584716797] [c2.goldfish.h264.decoder, video/avc] [emu64a, sdk_gphone64_arm64, Google, 35] 
+21:32:19.038
+Android
+Debug
+ 11-14 16:01:56.666 7582 D/EGL_emulation: app_time_stats: avg=17.70ms min=2.66ms max=46.32ms count=37 
+21:32:19.038
+Android
+Log
+ 11-14 16:01:56.987 7582 I/ExoPlayerImpl: Init fe70955 [AndroidXMedia3/1.5.1] [emu64a, sdk_gphone64_arm64, Google, 35] 
+21:32:19.038
+Android
+Debug
+ 11-14 16:01:57.669 7582 D/EGL_emulation: app_time_stats: avg=14.17ms min=1.87ms max=59.37ms count=36 
+21:32:19.038
+Android
+Debug
+ 11-14 16:01:58.682 7582 D/EGL_emulation: app_time_stats: avg=13.34ms min=1.53ms max=32.94ms count=40 
+21:32:19.038
+Android
+Debug
+ 11-14 16:01:58.888 7582 D/BufferPoolAccessor2.0: bufferpool2 0xb4000070fcf218d8 : 5(40960 size) total buffers - 1(8192 size) used buffers - 222/227 (recycle/alloc) - 5/226 (fetch/transfer) 
+21:32:19.038
+Android
+Debug
+ 11-14 16:01:58.918 7582 D/BufferPoolAccessor2.0: bufferpool2 0xb4000070fcf2b3c8 : 5(31457280 size) total buffers - 4(25165824 size) used buffers - 298/303 (recycle/alloc) - 5/302 (fetch/transfer) 
+21:32:19.038
+Android
+Debug
+ 11-14 16:01:59.690 7582 D/EGL_emulation: app_time_stats: avg=12.71ms min=2.65ms max=26.75ms count=37 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.519 7582 D/SurfaceUtils: connecting to surface 0xb40000701cf3e430, reason connectToSurface 
+21:32:19.038
+Android
+Log
+ 11-14 16:02:00.520 7582 I/MediaCodec: [c2.goldfish.h264.decoder] setting surface generation to 7763970 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.520 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf3e430, reason connectToSurface(reconnect)
+connecting to surface 0xb40000701cf3e420, reason connectToSurface(reconnect-with-listener) 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.520 7582 D/Codec2-OutputBufferQueue: remote graphic buffer migration 14/14 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.521 7582 D/Codec2Client: setOutputSurface -- failed to set consumer usage (6/BAD_INDEX)
+setOutputSurface -- generation=7763970 consumer usage=0x900 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.534 7582 D/Codec2Client: Surface configure completed 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.534 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf3c220, reason disconnectFromSurface 
+21:32:19.038
+Android
+Log
+ 11-14 16:02:00.540 7582 I/ExoPlayerImpl: Release 380116f [AndroidXMedia3/1.5.1] [emu64a, sdk_gphone64_arm64, Google, 35] [media3.common, media3.exoplayer, media3.decoder, media3.datasource, media3.extractor] 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.545 7582 D/MediaCodec: keep callback message for reclaim 
+21:32:19.038
+Android
+Log
+ 11-14 16:02:00.545 7582 I/CCodecConfig: query failed after returning 12 values (BAD_INDEX) 
+21:32:19.038
+Android
+Warning
+ 11-14 16:02:00.545 7582 W/Codec2Client: query -- param skipped: index = 1342179345.
+query -- param skipped: index = 2415921170.
+query -- param skipped: index = 1610614798. 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.549 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#417] flushed work; ignored.
+[c2.goldfish.h264.decoder#417] Discard frames from previous generation. 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.552 7582 D/CCodecBuffers: [c2.android.aac.decoder#785:1D-Output.Impl[N]] Client returned a buffer it does not own according to our record: 0 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.555 7582 D/MediaCodec: keep callback message for reclaim 
+21:32:19.038
+Android
+Log
+ 11-14 16:02:00.555 7582 I/CCodecConfig: query failed after returning 21 values (BAD_INDEX) 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.556 7582 D/CCodecConfig: c2 config diff is   c2::i32 coding.drc.compression-mode.value = 2 
+21:32:19.038
+Android
+Warning
+ 11-14 16:02:00.557 7582 W/Codec2Client: query -- param skipped: index = 1342179345.
+query -- param skipped: index = 2415921170.
+query -- param skipped: index = 1610614798. 
+21:32:19.038
+Android
+Log
+ 11-14 16:02:00.560 7582 I/MediaCodec: [c2.goldfish.h264.decoder] connecting to the same surface. Nothing to do. 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.561 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#417] MediaCodec discarded an unknown buffer
+[c2.goldfish.h264.decoder#417] MediaCodec discarded an unknown buffer
+[c2.goldfish.h264.decoder#417] MediaCodec discarded an unknown buffer
+[c2.goldfish.h264.decoder#417] MediaCodec discarded an unknown buffer 
+21:32:19.038
+Android
+Log
+ 11-14 16:02:00.566 7582 I/hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.567 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf3e430, reason disconnectFromSurface 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.569 7582 D/CCodecBufferChannel: [c2.android.aac.decoder#785] MediaCodec discarded an unknown buffer 
+21:32:19.038
+Android
+Debug
+ 11-14 16:02:00.570 7582 D/CCodecBufferChannel: [c2.android.aac.decoder#785] MediaCodec discarded an unknown buffer
+[c2.android.aac.decoder#785] MediaCodec discarded an unknown buffer
+[c2.android.aac.decoder#785] MediaCodec discarded an unknown buffer 
+21:32:19.038
+Android
+Log
+ 11-14 16:02:00.571 7582 I/hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients 
+21:32:19.039
+Android
+Debug
+ 11-14 16:02:00.716 7582 D/EGL_emulation: app_time_stats: avg=17.47ms min=1.56ms max=65.82ms count=35 
+21:32:19.039
+Android
+Log
+ 11-14 16:02:00.730 7582 I/ExoPlayerImpl: Init 826ee0e [AndroidXMedia3/1.5.1] [emu64a, sdk_gphone64_arm64, Google, 35] 
+21:32:19.039
+Android
+Log
+ 11-14 16:02:00.858 7582 I/ExoPlayerImpl: Release 826ee0e [AndroidXMedia3/1.5.1] [emu64a, sdk_gphone64_arm64, Google, 35] [media3.common, media3.exoplayer, media3.decoder, media3.datasource, media3.extractor] 
+21:32:19.039
+Android
+Debug
+ 11-14 16:02:01.729 7582 D/EGL_emulation: app_time_stats: avg=11.52ms min=1.12ms max=29.31ms count=43 
+21:32:19.039
+Android
+Debug
+ 11-14 16:02:02.752 7582 D/EGL_emulation: app_time_stats: avg=9.72ms min=1.38ms max=23.71ms count=43 
+21:32:19.039
+Android
+Debug
+ 11-14 16:02:03.767 7582 D/EGL_emulation: app_time_stats: avg=12.68ms min=1.64ms max=68.03ms count=40 
+21:32:19.039
+Android
+Debug
+ 11-14 16:02:04.777 7582 D/EGL_emulation: app_time_stats: avg=9.68ms min=1.88ms max=21.43ms count=43 
+21:32:19.039
+Android
+Debug
+ 11-14 16:02:05.661 7582 D/BufferPoolAccessor2.0: bufferpool2 0xb4000070fcf2b3c8 : 0(0 size) total buffers - 0(0 size) used buffers - 399/404 (recycle/alloc) - 5/403 (fetch/transfer)
+bufferpool2 0xb4000070fcf218d8 : 0(0 size) total buffers - 0(0 size) used buffers - 299/304 (recycle/alloc) - 5/299 (fetch/transfer)
+evictor expired: 2, evicted: 2 
+21:32:19.039
+Android
+Debug
+ 11-14 16:02:05.799 7582 D/EGL_emulation: app_time_stats: avg=11.67ms min=1.55ms max=25.45ms count=42 
+21:32:19.039
+Android
+Debug
+ 11-14 16:02:06.800 7582 D/EGL_emulation: app_time_stats: avg=9.93ms min=1.58ms max=21.30ms count=42 
+21:32:19.039
+Android
+Debug
+ 11-14 16:02:07.802 7582 D/EGL_emulation: app_time_stats: avg=10.89ms min=1.74ms max=28.63ms count=42 
+21:32:19.039
+Android
+Debug
+ 11-14 16:02:08.820 7582 D/EGL_emulation: app_time_stats: avg=10.24ms min=1.61ms max=23.34ms count=43 
+21:32:19.039
+Android
+Log
+ 11-14 16:02:09.352 7582 I/sesocial.vqxkpm: Waiting for a blocking GC ProfileSaver 
+21:32:19.039
+Android
+Log
+ 11-14 16:02:09.371 7582 I/sesocial.vqxkpm: WaitForGcToComplete blocked ProfileSaver on Background for 18.623ms 
+21:32:19.039
+Android
+Debug
+ 11-14 16:02:09.833 7582 D/EGL_emulation: app_time_stats: avg=10.54ms min=1.50ms max=18.96ms count=43 
+21:32:19.039
+Android
+Debug
+ 11-14 16:02:10.849 7582 D/EGL_emulation: app_time_stats: avg=9.91ms min=1.47ms max=22.13ms count=42 
+21:32:19.039
+Android
+Log
+ 11-14 16:02:13.582 7582 I/ExoPlayerImpl: Init 95fd182 [AndroidXMedia3/1.5.1] [emu64a, sdk_gphone64_arm64, Google, 35] 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.611 7582 D/EGL_emulation: app_time_stats: avg=1371.30ms min=14.08ms max=2728.53ms count=2 
+21:32:19.041
+Android
+Log
+ 11-14 16:02:13.633 7582 I/DMCodecAdapterFactory: Creating an asynchronous MediaCodec adapter for track type video 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.635 7582 D/CCodec  : allocate(c2.goldfish.h264.decoder) 
+21:32:19.041
+Android
+Log
+ 11-14 16:02:13.637 7582 I/CCodec  : setting up 'default' as default (vendor) store 
+21:32:19.041
+Android
+Log
+ 11-14 16:02:13.638 7582 I/CCodec  : Created component [c2.goldfish.h264.decoder] 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.640 7582 D/CCodecConfig: read media type: video/avc 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.645 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.646 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.647 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+extent() != 1 for single value type: output.buffers.allocator-ids.values 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.648 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+extent() != 1 for single value type: output.buffers.pool-ids.values
+extent() != 1 for single value type: algo.buffers.pool-ids.values 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.650 7582 D/ReflectedParamUpdater: ignored struct field coded.color-format.locations 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.651 7582 D/CCodecConfig: ignoring local param raw.size (0xd2001800) as it is already supported
+ignoring local param default.color (0x5200180b) as it is already supported 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.651 7582 D/ReflectedParamUpdater: ignored struct field raw.hdr-static-info.mastering 
+21:32:19.041
+Android
+Log
+ 11-14 16:02:13.652 7582 I/CCodecConfig: query failed after returning 12 values (BAD_INDEX) 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.652 7582 D/CCodecConfig: c2 config diff is Dict {
+c2::u32 coded.pl.level = 20496
+c2::u32 coded.pl.profile = 20481
+c2::u32 coded.vui.color.matrix = 0
+c2::u32 coded.vui.color.primaries = 0
+c2::u32 coded.vui.color.range = 2
+c2::u32 coded.vui.color.transfer = 0
+c2::u32 default.color.matrix = 0
+c2::u32 default.color.primaries = 0
+c2::u32 default.color.range = 0
+c2::u32 default.color.transfer = 0
+c2::u32 input.buffers.max-size.value = 6291456
+c2::u32 input.delay.value = 0
+string input.media-type.value = "video/avc"
+c2::u32 output.delay.value = 8
+string output.media-type.value = "video/raw"
+c2::u32 raw.color.matrix = 0
+c2::u32 raw.color.primaries = 0
+c2::u32 raw.color.range = 2
+c2::u32 raw.color.transfer = 0
+c2::u32 raw.max-size.height = 240
+c2::u32 raw.max-size.width = 320
+c2::u32 raw.pixel-format.value = 35
+c2::i32 raw.rotation.flip = 0
+c2::i32 raw.rotation.value = 0
+c2::u32 raw.sar.height = 1
+c2::u32 raw.sar.width = 1
+c2::u32 raw.size.height = 240
+c2::u32 raw.size.width = 320
+c2: 
+21:32:19.041
+Android
+Warning
+ 11-14 16:02:13.652 7582 W/ColorUtils: expected specified color aspects (2:0:0:0) 
+21:32:19.041
+Android
+Log
+ 11-14 16:02:13.654 7582 I/MediaCodec: MediaCodec will operate in async mode 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.654 7582 D/SurfaceUtils: connecting to surface 0xb40000701cf3c220, reason connectToSurface 
+21:32:19.041
+Android
+Log
+ 11-14 16:02:13.654 7582 I/MediaCodec: [c2.goldfish.h264.decoder] setting surface generation to 7763971 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.654 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf3c220, reason connectToSurface(reconnect)
+connecting to surface 0xb40000701cf3c210, reason connectToSurface(reconnect-with-listener) 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.654 7582 D/CCodec  : [c2.goldfish.h264.decoder] buffers are bound to CCodec for this session 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.655 7582 D/CCodecConfig: no c2 equivalents for log-session-id
+no c2 equivalents for importance
+no c2 equivalents for csd-1
+no c2 equivalents for native-window
+no c2 equivalents for native-window-generation
+no c2 equivalents for flags 
+21:32:19.041
+Android
+Debug
+ 11-14 16:02:13.656 7582 D/CCodecConfig: config failed => CORRUPTED
+c2 config diff is   c2::u32 raw.max-size.height = 720
+c2::u32 raw.max-size.width = 1280
+c2::u32 raw.size.height = 720
+c2::u32 raw.size.width = 1280 
+21:32:19.041
+Android
+Warning
+ 11-14 16:02:13.657 7582 W/Codec2Client: query -- param skipped: index = 1107298332. 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.657 7582 D/CCodec  : client requested max input size 137037, which is smaller than what component recommended (6291456); overriding with component recommendation. 
+21:32:19.042
+Android
+Warning
+ 11-14 16:02:13.657 7582 W/CCodec  : This behavior is subject to change. It is recommended that app developers double check whether the requested max input size is in reasonable range. 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.657 7582 D/CCodec  : encoding statistics level = 0
+setup formats input: AMessage(what = 0x00000000) = {
+int32_t height = 720
+int32_t level = 65536
+int32_t max-input-size = 6291456
+string mime = "video/avc"
+int32_t profile = 65536
+int32_t width = 1280
+Rect crop(0, 0, 1279, 719)
+}
+setup formats output: AMessage(what = 0x00000000) = {
+int32_t android._color-format = 2135033992
+int32_t android._video-scaling = 1
+int32_t rotation-degrees = 0
+int32_t color-standard = 1
+int32_t color-range = 2
+int32_t color-transfer = 3
+int32_t sar-height = 1
+int32_t sar-width = 1
+Rect crop(0, 0, 1279, 719)
+int32_t width = 1280
+int32_t height = 720
+int32_t max-height = 720
+int32_t max-width = 1280
+string mime = "video/raw"
+int32_t android._dataspace = 260
+int32_t color-format = 2130708361
+} 
+21:32:19.042
+Android
+Log
+ 11-14 16:02:13.657 7582 I/CCodecConfig: query failed after returning 12 values (BAD_INDEX) 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.658 7582 D/MediaCodec: keep callback message for reclaim 
+21:32:19.042
+Android
+Warning
+ 11-14 16:02:13.658 7582 W/Codec2Client: query -- param skipped: index = 1342179345.
+query -- param skipped: index = 2415921170.
+query -- param skipped: index = 1610614798. 
+21:32:19.042
+Android
+Warning
+ 11-14 16:02:13.659 7582 W/Codec2Client: query -- param skipped: index = 2684356609. 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.659 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#406] Created input block pool with allocatorID 16 => poolID 19 - OK (0) 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.660 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#406] Query output surface allocator returned 0 params => BAD_INDEX (6) 
+21:32:19.042
+Android
+Log
+ 11-14 16:02:13.660 7582 I/CCodecBufferChannel: [c2.goldfish.h264.decoder#406] Created output block pool with allocatorID 18 => poolID 18 - OK 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.661 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#406] Configured output block pool ids 18 => OK 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.661 7582 D/Codec2-OutputBufferQueue: remote graphic buffer migration 0/0 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.661 7582 D/Codec2Client: setOutputSurface -- failed to set consumer usage (6/BAD_INDEX)
+setOutputSurface -- generation=7763971 consumer usage=0x900 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.665 7582 D/Codec2Client: Surface configure completed 
+21:32:19.042
+Android
+Log
+ 11-14 16:02:13.674 7582 I/DMCodecAdapterFactory: Creating an asynchronous MediaCodec adapter for track type audio 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.674 7582 D/BufferPoolAccessor2.0: bufferpool2 0xb4000070fcf2b3c8 : 0(0 size) total buffers - 0(0 size) used buffers - 399/404 (recycle/alloc) - 5/403 (fetch/transfer)
+Destruction - bufferpool2 0xb4000070fcf2b3c8 cached: 0/0M, 0/0% in use; allocs: 404, 99% recycled; transfers: 403, 99% unfetched 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.676 7582 D/CCodec  : allocate(c2.android.aac.decoder) 
+21:32:19.042
+Android
+Log
+ 11-14 16:02:13.680 7582 I/CCodec  : setting up 'default' as default (vendor) store 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.681 7582 D/BufferPoolAccessor2.0: bufferpool2 0xb4000070fcf218d8 : 0(0 size) total buffers - 0(0 size) used buffers - 299/304 (recycle/alloc) - 5/299 (fetch/transfer)
+Destruction - bufferpool2 0xb4000070fcf218d8 cached: 0/0M, 0/0% in use; allocs: 304, 98% recycled; transfers: 299, 98% unfetched 
+21:32:19.042
+Android
+Log
+ 11-14 16:02:13.702 7582 I/CCodec  : Created component [c2.android.aac.decoder] 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.702 7582 D/CCodecConfig: read media type: audio/mp4a-latm 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.702 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+extent() != 1 for single value type: output.subscribed-indices.values
+extent() != 1 for single value type: input.buffers.allocator-ids.values
+extent() != 1 for single value type: output.buffers.allocator-ids.values
+extent() != 1 for single value type: algo.buffers.allocator-ids.values
+extent() != 1 for single value type: output.buffers.pool-ids.values
+extent() != 1 for single value type: algo.buffers.pool-ids.values 
+21:32:19.042
+Android
+Log
+ 11-14 16:02:13.705 7582 I/CCodecConfig: query failed after returning 21 values (BAD_INDEX) 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.705 7582 D/CCodecConfig: c2 config diff is Dict {
+c2::u32 coded.aac-packaging.value = 0
+c2::u32 coded.bitrate.value = 64000
+c2::u32 coded.pl.level = 0
+c2::u32 coded.pl.profile = 8192
+c2::i32 coding.drc.album-mode.value = 0
+c2::float coding.drc.attenuation-factor.value = 1
+c2::float coding.drc.boost-factor.value = 1
+c2::i32 coding.drc.compression-mode.value = 3
+c2::i32 coding.drc.effect-type.value = 3
+c2::float coding.drc.encoded-level.value = 0.25
+c2::float coding.drc.reference-level.value = -16
+c2::u32 input.buffers.max-size.value = 8192
+c2::u32 input.delay.value = 0
+string input.media-type.value = "audio/mp4a-latm"
+c2::u32 output.delay.value = 2
+c2::float output.drc.output-loudness.value = 0.25
+c2::u32 output.large-frame.max-size = 0
+c2::u32 output.large-frame.threshold-size = 0
+string output.media-type.value = "audio/raw"
+c2::u32 raw.channel-count.value = 1
+c2::u32 raw.channel-mask.value = 0
+c2::u32 raw.max-channel-count.value = 8
+c2::u32 raw.sample-rate.value = 44100
+} 
+21:32:19.042
+Android
+Log
+ 11-14 16:02:13.707 7582 I/MediaCodec: MediaCodec will operate in async mode 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.707 7582 D/CCodec  : [c2.android.aac.decoder] buffers are bound to CCodec for this session 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.707 7582 D/CCodecConfig: no c2 equivalents for log-session-id
+no c2 equivalents for importance
+no c2 equivalents for flags 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.708 7582 D/CCodecConfig: config failed => CORRUPTED 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.709 7582 D/CCodecConfig: c2 config diff is   c2::u32 raw.channel-count.value = 2
+c2::u32 raw.sample-rate.value = 48000 
+21:32:19.042
+Android
+Warning
+ 11-14 16:02:13.709 7582 W/Codec2Client: query -- param skipped: index = 1107298332. 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.709 7582 D/CCodec  : client requested max input size 571, which is smaller than what component recommended (8192); overriding with component recommendation. 
+21:32:19.042
+Android
+Warning
+ 11-14 16:02:13.709 7582 W/CCodec  : This behavior is subject to change. It is recommended that app developers double check whether the requested max input size is in reasonable range. 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.709 7582 D/CCodec  : encoding statistics level = 0
+setup formats input: AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 64
+int32_t bitrate = 64000
+int32_t channel-count = 2
+int32_t channel-mask = 0
+int32_t level = 0
+int32_t max-input-size = 8192
+int32_t max-output-channel-count = 8
+string mime = "audio/mp4a-latm"
+int32_t profile = 2
+int32_t sample-rate = 48000
+}
+setup formats output: AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-drc-output-loudness = -1
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 64
+int32_t buffer-batch-max-output-size = 0
+int32_t buffer-batch-threshold-output-size = 0
+int32_t channel-count = 2
+int32_t channel-mask = 0
+int32_t max-output-channel-count = 8
+string mime = "audio/raw"
+int32_t sample-rate = 48000
+int32_t android._config-pcm-encoding = 2
+} 
+21:32:19.042
+Android
+Log
+ 11-14 16:02:13.710 7582 I/CCodecConfig: query failed after returning 21 values (BAD_INDEX) 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.711 7582 D/MediaCodec: keep callback message for reclaim 
+21:32:19.042
+Android
+Warning
+ 11-14 16:02:13.712 7582 W/Codec2Client: query -- param skipped: index = 1342179345.
+query -- param skipped: index = 2415921170.
+query -- param skipped: index = 1610614798. 
+21:32:19.042
+Android
+Debug
+ 11-14 16:02:13.713 7582 D/CCodecBufferChannel: [c2.android.aac.decoder#480] Created input block pool with allocatorID 16 => poolID 20 - OK (0) 
+21:32:19.042
+Android
+Log
+ 11-14 16:02:13.713 7582 I/CCodecBufferChannel: [c2.android.aac.decoder#480] Created output block pool with allocatorID 16 => poolID 38 - OK 
+21:32:19.043
+Android
+Debug
+ 11-14 16:02:13.713 7582 D/CCodecBufferChannel: [c2.android.aac.decoder#480] Configured output block pool ids 38 => OK 
+21:32:19.043
+Android
+Debug
+ 11-14 16:02:13.788 7582 D/CCodecConfig: c2 config diff is   c2::u32 raw.crop.height = 720
+c2::u32 raw.crop.left = 0
+c2::u32 raw.crop.top = 0
+c2::u32 raw.crop.width = 1280 
+21:32:19.043
+Android
+Debug
+ 11-14 16:02:13.793 7582 D/CCodecConfig: c2 config diff is   c2::u32 raw.channel-mask.value = 12 
+21:32:19.043
+Android
+Debug
+ 11-14 16:02:13.806 7582 D/CCodecBuffers: [c2.android.aac.decoder#480:Output[N]] popFromStashAndRegister: at 1000000000000us, output format changed to AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-drc-output-loudness = -1
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 64
+int32_t buffer-batch-max-output-size = 0
+int32_t buffer-batch-threshold-output-size = 0
+int32_t channel-count = 2
+int32_t channel-mask = 12
+int32_t max-output-channel-count = 8
+string mime = "audio/raw"
+int32_t sample-rate = 48000
+int32_t android._config-pcm-encoding = 2
+} 
+21:32:19.043
+Android
+Debug
+ 11-14 16:02:13.808 7582 D/CCodecConfig: c2 config diff is   c2::float coding.drc.reference-level.value = -24 
+21:32:19.043
+Android
+Debug
+ 11-14 16:02:13.808 7582 D/CCodecBuffers: [c2.android.aac.decoder#480:Output[N]] popFromStashAndRegister: at 1000000021333us, output format changed to AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-drc-output-loudness = -1
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 96
+int32_t buffer-batch-max-output-size = 0
+int32_t buffer-batch-threshold-output-size = 0
+int32_t channel-count = 2
+int32_t channel-mask = 12
+int32_t max-output-channel-count = 8
+string mime = "audio/raw"
+int32_t sample-rate = 48000
+int32_t android._config-pcm-encoding = 2
+} 
+21:32:39.079
+Android
+Debug
+ 11-14 16:02:18.395 7582 D/EGL_emulation: app_time_stats: avg=231.10ms min=1.73ms max=4054.21ms count=20 
+21:32:39.079
+Android
+Debug
+ 11-14 16:02:18.415 7582 D/AudioTrack: getTimestamp_l(23): device stall time corrected using current time 1741623702912 
+21:32:39.079
+Android
+Debug
+ 11-14 16:02:18.943 7582 D/BufferPoolAccessor2.0: bufferpool2 0xb4000070fcf39418 : 5(40960 size) total buffers - 1(8192 size) used buffers - 53/58 (recycle/alloc) - 10/58 (fetch/transfer) 
+21:32:39.079
+Android
+Debug
+ 11-14 16:02:18.954 7582 D/BufferPoolAccessor2.0: bufferpool2 0xb4000070fcf33e88 : 5(31457280 size) total buffers - 4(25165824 size) used buffers - 33/38 (recycle/alloc) - 7/38 (fetch/transfer) 
+21:32:39.079
+Android
+Debug
+ 11-14 16:02:19.411 7582 D/EGL_emulation: app_time_stats: avg=32.63ms min=10.64ms max=51.27ms count=29 
+21:32:39.079
+Android
+Debug
+ 11-14 16:02:19.678 7582 D/BufferPoolAccessor2.0: evictor expired: 2, evicted: 0 
+21:32:39.079
+Android
+Debug
+ 11-14 16:02:20.421 7582 D/EGL_emulation: app_time_stats: avg=34.94ms min=13.00ms max=51.64ms count=28 
+21:32:39.079
+Android
+Log
+ 11-14 16:02:21.066 7582 I/sesocial.vqxkpm: Compiler allocated 7645KB to compile void com.example.ui.screens.LoopsAndProfileScreensKt.ProfileScreen(com.example.data.model.UserProfileState, boolean, boolean, boolean, java.util.List, java.util.List, java.util.List, java.lang.String, java.util.List, java.util.List, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function7, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function2, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, androidx.compose.ui.Modifier, androidx.compose.runtime.Composer, int, int, int, int) 
+21:32:39.079
+Android
+Log
+ 11-14 16:02:21.084 7582 I/sesocial.vqxkpm: Compiler allocated 5176KB to compile kotlin.Unit com.example.ui.screens.LoopsAndProfileScreensKt.ProfileScreen$lambda$169$lambda$168$lambda$167$lambda$121(java.lang.String, com.example.data.model.UserProfileState, kotlin.jvm.functions.Function0, java.util.List, int, java.util.List, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.foundation.lazy.grid.LazyGridItemScope, androidx.compose.runtime.Composer, int) 
+21:32:39.079
+Android
+Log
+ 11-14 16:02:21.156 7582 I/ExoPlayerImpl: Init 3ec911d [AndroidXMedia3/1.5.1] [emu64a, sdk_gphone64_arm64, Google, 35] 
+21:32:39.079
+Android
+Log
+ 11-14 16:02:21.170 7582 I/ExoPlayerImpl: Init ab31a20 [AndroidXMedia3/1.5.1] [emu64a, sdk_gphone64_arm64, Google, 35] 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.194 7582 I/ExoPlayerImpl: Init 114885e [AndroidXMedia3/1.5.1] [emu64a, sdk_gphone64_arm64, Google, 35] 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.256 7582 D/MediaCodecInfo: NoSupport [sizeAndRate.cover, 720x1280@59.94005584716797] [c2.goldfish.h264.decoder, video/avc] [emu64a, sdk_gphone64_arm64, Google, 35]
+NoSupport [sizeAndRate.cover, 720x1280@59.94005584716797] [c2.goldfish.h264.decoder, video/avc] [emu64a, sdk_gphone64_arm64, Google, 35] 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.268 7582 I/DMCodecAdapterFactory: Creating an asynchronous MediaCodec adapter for track type video 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.270 7582 I/DMCodecAdapterFactory: Creating an asynchronous MediaCodec adapter for track type video 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.288 7582 D/CCodec  : allocate(c2.goldfish.h264.decoder)
+allocate(c2.goldfish.h264.decoder) 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.288 7582 I/CCodec  : setting up 'default' as default (vendor) store 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.291 7582 I/CCodec  : setting up 'default' as default (vendor) store 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.293 7582 I/CCodec  : Created component [c2.goldfish.h264.decoder] 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.293 7582 D/CCodecConfig: read media type: video/avc 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.294 7582 I/CCodec  : Created component [c2.goldfish.h264.decoder] 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.294 7582 D/CCodecConfig: read media type: video/avc 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.295 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.296 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+extent() != 1 for single value type: input.buffers.allocator-ids.values 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.297 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.298 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.311 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.313 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.314 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+extent() != 1 for single value type: input.buffers.allocator-ids.values
+extent() != 1 for single value type: output.buffers.allocator-ids.values
+extent() != 1 for single value type: algo.buffers.allocator-ids.values 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.315 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+extent() != 1 for single value type: algo.buffers.pool-ids.values 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.316 7582 D/ReflectedParamUpdater: ignored struct field coded.color-format.locations 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.318 7582 D/CCodecConfig: ignoring local param raw.size (0xd2001800) as it is already supported
+ignoring local param default.color (0x5200180b) as it is already supported 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.318 7582 D/ReflectedParamUpdater: ignored struct field raw.hdr-static-info.mastering 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.318 7582 I/CCodecConfig: query failed after returning 12 values (BAD_INDEX) 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.319 7582 D/CCodecConfig: c2 config diff is Dict {
+c2::u32 coded.pl.level = 20496
+c2::u32 coded.pl.profile = 20481
+c2::u32 coded.vui.color.matrix = 0
+c2::u32 coded.vui.color.primaries = 0
+c2::u32 coded.vui.color.range = 2
+c2::u32 coded.vui.color.transfer = 0
+c2::u32 default.color.matrix = 0
+c2::u32 default.color.primaries = 0
+c2::u32 default.color.range = 0
+c2::u32 default.color.transfer = 0
+c2::u32 input.buffers.max-size.value = 6291456
+c2::u32 input.delay.value = 0
+string input.media-type.value = "video/avc"
+c2::u32 output.delay.value = 8
+string output.media-type.value = "video/raw"
+c2::u32 raw.color.matrix = 0
+c2::u32 raw.color.primaries = 0
+c2::u32 raw.color.range = 2
+c2::u32 raw.color.transfer = 0
+c2::u32 raw.max-size.height = 240
+c2::u32 raw.max-size.width = 320
+c2::u32 raw.pixel-format.value = 35
+c2::i32 raw.rotation.flip = 0
+c2::i32 raw.rotation.value = 0
+c2::u32 raw.sar.height = 1
+c2::u32 raw.sar.width = 1
+c2::u32 raw.size.height = 240
+c2::u32 raw.size.width = 320
+c2: 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.319 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values 
+21:32:39.080
+Android
+Warning
+ 11-14 16:02:21.319 7582 W/ColorUtils: expected specified color aspects (2:0:0:0) 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.325 7582 D/ReflectedParamUpdater: ignored struct field coded.color-format.locations 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.326 7582 D/CCodecConfig: ignoring local param raw.size (0xd2001800) as it is already supported
+ignoring local param default.color (0x5200180b) as it is already supported 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.326 7582 D/ReflectedParamUpdater: ignored struct field raw.hdr-static-info.mastering 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.327 7582 I/CCodecConfig: query failed after returning 12 values (BAD_INDEX) 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.327 7582 D/CCodecConfig: c2 config diff is Dict {
+c2::u32 coded.pl.level = 20496
+c2::u32 coded.pl.profile = 20481
+c2::u32 coded.vui.color.matrix = 0
+c2::u32 coded.vui.color.primaries = 0
+c2::u32 coded.vui.color.range = 2
+c2::u32 coded.vui.color.transfer = 0
+c2::u32 default.color.matrix = 0
+c2::u32 default.color.primaries = 0
+c2::u32 default.color.range = 0
+c2::u32 default.color.transfer = 0
+c2::u32 input.buffers.max-size.value = 6291456
+c2::u32 input.delay.value = 0
+string input.media-type.value = "video/avc"
+c2::u32 output.delay.value = 8
+string output.media-type.value = "video/raw"
+c2::u32 raw.color.matrix = 0
+c2::u32 raw.color.primaries = 0
+c2::u32 raw.color.range = 2
+c2::u32 raw.color.transfer = 0
+c2::u32 raw.max-size.height = 240
+c2::u32 raw.max-size.width = 320
+c2::u32 raw.pixel-format.value = 35
+c2::i32 raw.rotation.flip = 0
+c2::i32 raw.rotation.value = 0
+c2::u32 raw.sar.height = 1
+c2::u32 raw.sar.width = 1
+c2::u32 raw.size.height = 240
+c2::u32 raw.size.width = 320
+c2: 
+21:32:39.080
+Android
+Warning
+ 11-14 16:02:21.328 7582 W/ColorUtils: expected specified color aspects (2:0:0:0) 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.333 7582 I/MediaCodec: MediaCodec will operate in async mode 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.333 7582 D/SurfaceUtils: connecting to surface 0xb40000701cf3a010, reason connectToSurface 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.333 7582 I/MediaCodec: [c2.goldfish.h264.decoder] setting surface generation to 7763972 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.333 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf3a010, reason connectToSurface(reconnect) 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.334 7582 D/SurfaceUtils: connecting to surface 0xb40000701cf3a000, reason connectToSurface(reconnect-with-listener) 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.334 7582 I/MediaCodec: MediaCodec will operate in async mode 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.334 7582 D/CCodec  : [c2.goldfish.h264.decoder] buffers are bound to CCodec for this session 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.334 7582 D/SurfaceUtils: connecting to surface 0xb40000701cf3e430, reason connectToSurface 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.334 7582 I/MediaCodec: [c2.goldfish.h264.decoder] setting surface generation to 7763973 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.334 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf3e430, reason connectToSurface(reconnect)
+connecting to surface 0xb40000701cf3e420, reason connectToSurface(reconnect-with-listener) 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.334 7582 D/CCodec  : [c2.goldfish.h264.decoder] buffers are bound to CCodec for this session 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.334 7582 D/CCodecConfig: no c2 equivalents for log-session-id
+no c2 equivalents for importance
+no c2 equivalents for csd-1
+no c2 equivalents for native-window
+no c2 equivalents for native-window-generation 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.335 7582 D/CCodecConfig: no c2 equivalents for flags
+config failed => CORRUPTED
+c2 config diff is   c2::u32 raw.max-size.height = 1280
+c2::u32 raw.max-size.width = 720
+c2::u32 raw.size.height = 1280
+c2::u32 raw.size.width = 720
+no c2 equivalents for log-session-id 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.336 7582 D/CCodecConfig: no c2 equivalents for importance
+no c2 equivalents for csd-1
+no c2 equivalents for native-window
+no c2 equivalents for native-window-generation
+no c2 equivalents for flags 
+21:32:39.080
+Android
+Warning
+ 11-14 16:02:21.336 7582 W/Codec2Client: query -- param skipped: index = 1107298332. 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.336 7582 D/CCodec  : client requested max input size 97326, which is smaller than what component recommended (6291456); overriding with component recommendation. 
+21:32:39.080
+Android
+Warning
+ 11-14 16:02:21.336 7582 W/CCodec  : This behavior is subject to change. It is recommended that app developers double check whether the requested max input size is in reasonable range. 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.336 7582 D/CCodec  : encoding statistics level = 0
+setup formats input: AMessage(what = 0x00000000) = {
+int32_t height = 1280
+int32_t level = 65536
+int32_t max-input-size = 6291456
+string mime = "video/avc"
+int32_t profile = 65536
+int32_t width = 720
+Rect crop(0, 0, 719, 1279)
+} 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.337 7582 D/CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+int32_t android._color-format = 2135033992
+int32_t android._video-scaling = 1
+int32_t rotation-degrees = 0
+int32_t color-standard = 1
+int32_t color-range = 2
+int32_t color-transfer = 3
+int32_t sar-height = 1
+int32_t sar-width = 1
+Rect crop(0, 0, 719, 1279)
+int32_t width = 720
+int32_t height = 1280
+int32_t max-height = 1280
+int32_t max-width = 720
+string mime = "video/raw"
+int32_t android._dataspace = 260
+int32_t color-format = 2130708361
+} 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.337 7582 I/CCodecConfig: query failed after returning 12 values (BAD_INDEX) 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.337 7582 D/CCodecConfig: config failed => CORRUPTED
+c2 config diff is   c2::u32 raw.max-size.height = 720
+c2::u32 raw.max-size.width = 1280
+c2::u32 raw.size.height = 720
+c2::u32 raw.size.width = 1280 
+21:32:39.080
+Android
+Warning
+ 11-14 16:02:21.337 7582 W/Codec2Client: query -- param skipped: index = 1107298332. 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.337 7582 D/CCodec  : client requested max input size 137037, which is smaller than what component recommended (6291456); overriding with component recommendation. 
+21:32:39.080
+Android
+Warning
+ 11-14 16:02:21.337 7582 W/CCodec  : This behavior is subject to change. It is recommended that app developers double check whether the requested max input size is in reasonable range. 
+21:32:39.080
+Android
+Debug
+ 11-14 16:02:21.337 7582 D/CCodec  : encoding statistics level = 0
+setup formats input: AMessage(what = 0x00000000) = {
+int32_t height = 720
+int32_t level = 65536
+int32_t max-input-size = 6291456
+string mime = "video/avc"
+int32_t profile = 65536
+int32_t width = 1280
+Rect crop(0, 0, 1279, 719)
+}
+setup formats output: AMessage(what = 0x00000000) = {
+int32_t android._color-format = 2135033992
+int32_t android._video-scaling = 1
+int32_t rotation-degrees = 0
+int32_t color-standard = 1
+int32_t color-range = 2
+int32_t color-transfer = 3
+int32_t sar-height = 1
+int32_t sar-width = 1
+Rect crop(0, 0, 1279, 719)
+int32_t width = 1280
+int32_t height = 720
+int32_t max-height = 720
+int32_t max-width = 1280
+string mime = "video/raw"
+int32_t android._dataspace = 260
+int32_t color-format = 2130708361
+} 
+21:32:39.080
+Android
+Log
+ 11-14 16:02:21.337 7582 I/CCodecConfig: query failed after returning 12 values (BAD_INDEX) 
+21:32:39.081
+Android
+Debug
+ 11-14 16:02:21.338 7582 D/MediaCodec: keep callback message for reclaim 
+21:32:39.081
+Android
+Warning
+ 11-14 16:02:21.341 7582 W/Codec2Client: query -- param skipped: index = 1342179345.
+query -- param skipped: index = 2415921170.
+query -- param skipped: index = 1610614798.
+query -- param skipped: index = 2684356609. 
+21:32:39.081
+Android
+Debug
+ 11-14 16:02:21.341 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#91] Created input block pool with allocatorID 16 => poolID 21 - OK (0) 
+21:32:39.081
+Android
+Debug
+ 11-14 16:02:21.342 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#91] Query output surface allocator returned 0 params => BAD_INDEX (6) 
+21:32:39.081
+Android
+Log
+ 11-14 16:02:21.342 7582 I/CCodecBufferChannel: [c2.goldfish.h264.decoder#91] Created output block pool with allocatorID 18 => poolID 19 - OK 
+21:32:39.081
+Android
+Debug
+ 11-14 16:02:21.342 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#91] Configured output block pool ids 19 => OK 
+21:32:39.081
+Android
+Debug
+ 11-14 16:02:21.342 7582 D/Codec2-OutputBufferQueue: remote graphic buffer migration 0/0 
+21:32:39.081
+Android
+Debug
+ 11-14 16:02:21.342 7582 D/Codec2Client: setOutputSurface -- failed to set consumer usage (6/BAD_INDEX)
+setOutputSurface -- generation=7763972 consumer usage=0x900 
+21:32:39.081
+Android
+Log
+ 11-14 16:02:21.343 7582 I/ExoPlayerImpl: Release fe70955 [AndroidXMedia3/1.5.1] [emu64a, sdk_gphone64_arm64, Google, 35] [media3.common, media3.exoplayer, media3.decoder, media3.datasource, media3.extractor] 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.344 7582 D/MediaCodec: keep callback message for reclaim 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.344 7582 D/Codec2Client: Surface configure completed 
+21:32:39.082
+Android
+Warning
+ 11-14 16:02:21.348 7582 W/Codec2Client: query -- param skipped: index = 1342179345.
+query -- param skipped: index = 2415921170.
+query -- param skipped: index = 1610614798. 
+21:32:39.082
+Android
+Warning
+ 11-14 16:02:21.353 7582 W/Codec2Client: query -- param skipped: index = 2684356609. 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.355 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#637] Created input block pool with allocatorID 16 => poolID 22 - OK (0) 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.357 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#637] Query output surface allocator returned 0 params => BAD_INDEX (6) 
+21:32:39.082
+Android
+Log
+ 11-14 16:02:21.358 7582 I/CCodecBufferChannel: [c2.goldfish.h264.decoder#637] Created output block pool with allocatorID 18 => poolID 20 - OK 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.358 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#637] Configured output block pool ids 20 => OK 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.358 7582 D/Codec2-OutputBufferQueue: remote graphic buffer migration 0/0 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.360 7582 D/Codec2Client: setOutputSurface -- failed to set consumer usage (6/BAD_INDEX)
+setOutputSurface -- generation=7763973 consumer usage=0x900 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.362 7582 D/Codec2Client: Surface configure completed 
+21:32:39.082
+Android
+Log
+ 11-14 16:02:21.393 7582 I/DMCodecAdapterFactory: Creating an asynchronous MediaCodec adapter for track type audio 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.394 7582 D/CCodec  : allocate(c2.android.aac.decoder) 
+21:32:39.082
+Android
+Log
+ 11-14 16:02:21.397 7582 I/CCodec  : setting up 'default' as default (vendor) store 
+21:32:39.082
+Android
+Log
+ 11-14 16:02:21.399 7582 I/CCodec  : Created component [c2.android.aac.decoder] 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.400 7582 D/CCodecConfig: read media type: audio/mp4a-latm 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.416 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.417 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+extent() != 1 for single value type: input.buffers.allocator-ids.values
+extent() != 1 for single value type: output.buffers.allocator-ids.values 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.418 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+extent() != 1 for single value type: output.buffers.pool-ids.values 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.419 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.430 7582 D/MediaCodecInfo: NoSupport [sizeAndRate.cover, 720x1280@59.94005584716797] [c2.goldfish.h264.decoder, video/avc] [emu64a, sdk_gphone64_arm64, Google, 35] 
+21:32:39.082
+Android
+Warning
+ 11-14 16:02:21.430 7582 W/MediaCodecRenderer: Format exceeds selected codec's capabilities [id=1, mimeType=video/avc, codecs=avc1.4D4020, res=720x1280, color=NA/NA/NA/8/8, fps=59.940056, c2.goldfish.h264.decoder] 
+21:32:39.082
+Android
+Log
+ 11-14 16:02:21.431 7582 I/DMCodecAdapterFactory: Creating an asynchronous MediaCodec adapter for track type audio 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.432 7582 D/SurfaceUtils: connecting to surface 0xb40000701cf339e0, reason connectToSurface 
+21:32:39.082
+Android
+Log
+ 11-14 16:02:21.432 7582 I/MediaCodec: [c2.goldfish.h264.decoder] setting surface generation to 7763974 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.432 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf339e0, reason connectToSurface(reconnect)
+connecting to surface 0xb40000701cf339d0, reason connectToSurface(reconnect-with-listener) 
+21:32:39.082
+Android
+Debug
+ 11-14 16:02:21.435 7582 D/Codec2-OutputBufferQueue: remote graphic buffer migration 13/13 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.436 7582 D/Codec2Client: setOutputSurface -- failed to set consumer usage (6/BAD_INDEX)
+setOutputSurface -- generation=7763974 consumer usage=0x900 
+21:32:39.083
+Android
+Log
+ 11-14 16:02:21.436 7582 I/CCodecConfig: query failed after returning 21 values (BAD_INDEX) 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.436 7582 D/CCodecConfig: c2 config diff is Dict {
+c2::u32 coded.aac-packaging.value = 0
+c2::u32 coded.bitrate.value = 64000
+c2::u32 coded.pl.level = 0
+c2::u32 coded.pl.profile = 8192
+c2::i32 coding.drc.album-mode.value = 0
+c2::float coding.drc.attenuation-factor.value = 1
+c2::float coding.drc.boost-factor.value = 1
+c2::i32 coding.drc.compression-mode.value = 3
+c2::i32 coding.drc.effect-type.value = 3
+c2::float coding.drc.encoded-level.value = 0.25
+c2::float coding.drc.reference-level.value = -16
+c2::u32 input.buffers.max-size.value = 8192
+c2::u32 input.delay.value = 0
+string input.media-type.value = "audio/mp4a-latm"
+c2::u32 output.delay.value = 2
+c2::float output.drc.output-loudness.value = 0.25
+c2::u32 output.large-frame.max-size = 0
+c2::u32 output.large-frame.threshold-size = 0
+string output.media-type.value = "audio/raw"
+c2::u32 raw.channel-count.value = 1
+c2::u32 raw.channel-mask.value = 0
+c2::u32 raw.max-channel-count.value = 8
+c2::u32 raw.sample-rate.value = 44100
+} 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.438 7582 D/CCodec  : allocate(c2.android.aac.decoder) 
+21:32:39.083
+Android
+Warning
+ 11-14 16:02:21.439 7582 W/Codec2-OutputBufferQueue: receiving stale buffer: generation 7763974 , diff 3 : slot 9 
+21:32:39.083
+Android
+Log
+ 11-14 16:02:21.442 7582 I/CCodec  : setting up 'default' as default (vendor) store 
+21:32:39.083
+Android
+Log
+ 11-14 16:02:21.442 7582 I/MediaCodec: MediaCodec will operate in async mode 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.444 7582 D/CCodec  : [c2.android.aac.decoder] buffers are bound to CCodec for this session 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.445 7582 D/CCodecConfig: no c2 equivalents for log-session-id
+no c2 equivalents for importance
+no c2 equivalents for flags 
+21:32:39.083
+Android
+Log
+ 11-14 16:02:21.445 7582 I/CCodec  : Created component [c2.android.aac.decoder] 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.446 7582 D/CCodecConfig: read media type: audio/mp4a-latm
+config failed => CORRUPTED
+c2 config diff is   c2::u32 raw.channel-count.value = 2
+c2::u32 raw.sample-rate.value = 48000 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.446 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+extent() != 1 for single value type: output.subscribed-indices.values
+extent() != 1 for single value type: input.buffers.allocator-ids.values
+extent() != 1 for single value type: output.buffers.allocator-ids.values
+extent() != 1 for single value type: algo.buffers.allocator-ids.values 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.447 7582 D/ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+extent() != 1 for single value type: algo.buffers.pool-ids.values 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.448 7582 D/Codec2Client: Surface configure completed 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.448 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf3c220, reason disconnectFromSurface 
+21:32:39.083
+Android
+Warning
+ 11-14 16:02:21.448 7582 W/Codec2Client: query -- param skipped: index = 1107298332. 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.448 7582 D/CCodec  : client requested max input size 571, which is smaller than what component recommended (8192); overriding with component recommendation. 
+21:32:39.083
+Android
+Warning
+ 11-14 16:02:21.448 7582 W/CCodec  : This behavior is subject to change. It is recommended that app developers double check whether the requested max input size is in reasonable range. 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.448 7582 D/CCodec  : encoding statistics level = 0
+setup formats input: AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 64
+int32_t bitrate = 64000
+int32_t channel-count = 2
+int32_t channel-mask = 0
+int32_t level = 0
+int32_t max-input-size = 8192
+int32_t max-output-channel-count = 8
+string mime = "audio/mp4a-latm"
+int32_t profile = 2
+int32_t sample-rate = 48000
+}
+setup formats output: AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-drc-output-loudness = -1
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 64
+int32_t buffer-batch-max-output-size = 0
+int32_t buffer-batch-threshold-output-size = 0
+int32_t channel-count = 2
+int32_t channel-mask = 0
+int32_t max-output-channel-count = 8
+string mime = "audio/raw"
+int32_t sample-rate = 48000
+int32_t android._config-pcm-encoding = 2
+} 
+21:32:39.083
+Android
+Log
+ 11-14 16:02:21.448 7582 I/CCodecConfig: query failed after returning 21 values (BAD_INDEX) 
+21:32:39.083
+Android
+Log
+ 11-14 16:02:21.449 7582 I/CCodecConfig: query failed after returning 21 values (BAD_INDEX) 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.449 7582 D/CCodecConfig: c2 config diff is Dict {
+c2::u32 coded.aac-packaging.value = 0
+c2::u32 coded.bitrate.value = 64000
+c2::u32 coded.pl.level = 0
+c2::u32 coded.pl.profile = 8192
+c2::i32 coding.drc.album-mode.value = 0
+c2::float coding.drc.attenuation-factor.value = 1
+c2::float coding.drc.boost-factor.value = 1
+c2::i32 coding.drc.compression-mode.value = 3
+c2::i32 coding.drc.effect-type.value = 3
+c2::float coding.drc.encoded-level.value = 0.25
+c2::float coding.drc.reference-level.value = -16
+c2::u32 input.buffers.max-size.value = 8192
+c2::u32 input.delay.value = 0
+string input.media-type.value = "audio/mp4a-latm"
+c2::u32 output.delay.value = 2
+c2::float output.drc.output-loudness.value = 0.25
+c2::u32 output.large-frame.max-size = 0
+c2::u32 output.large-frame.threshold-size = 0
+string output.media-type.value = "audio/raw"
+c2::u32 raw.channel-count.value = 1
+c2::u32 raw.channel-mask.value = 0
+c2::u32 raw.max-channel-count.value = 8
+c2::u32 raw.sample-rate.value = 44100
+} 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.450 7582 D/MediaCodec: keep callback message for reclaim 
+21:32:39.083
+Android
+Log
+ 11-14 16:02:21.450 7582 I/ExoPlayerImpl: Release 95fd182 [AndroidXMedia3/1.5.1] [emu64a, sdk_gphone64_arm64, Google, 35] [media3.common, media3.exoplayer, media3.decoder, media3.datasource, media3.extractor] 
+21:32:39.083
+Android
+Warning
+ 11-14 16:02:21.450 7582 W/Codec2Client: query -- param skipped: index = 1342179345.
+query -- param skipped: index = 2415921170.
+query -- param skipped: index = 1610614798. 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.453 7582 D/MediaCodec: keep callback message for reclaim 
+21:32:39.083
+Android
+Log
+ 11-14 16:02:21.454 7582 I/CCodecConfig: query failed after returning 12 values (BAD_INDEX) 
+21:32:39.083
+Android
+Warning
+ 11-14 16:02:21.454 7582 W/Codec2Client: query -- param skipped: index = 1342179345.
+query -- param skipped: index = 2415921170.
+query -- param skipped: index = 1610614798. 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.455 7582 D/CCodecBufferChannel: [c2.android.aac.decoder#506] Created input block pool with allocatorID 16 => poolID 23 - OK (0) 
+21:32:39.083
+Android
+Log
+ 11-14 16:02:21.456 7582 I/CCodecBufferChannel: [c2.android.aac.decoder#506] Created output block pool with allocatorID 16 => poolID 41 - OK 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.456 7582 D/CCodecBufferChannel: [c2.android.aac.decoder#506] Configured output block pool ids 41 => OK 
+21:32:39.083
+Android
+Log
+ 11-14 16:02:21.456 7582 I/MediaCodec: MediaCodec will operate in async mode 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.457 7582 D/CCodec  : [c2.android.aac.decoder] buffers are bound to CCodec for this session 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.457 7582 D/CCodecConfig: no c2 equivalents for log-session-id
+no c2 equivalents for importance
+no c2 equivalents for flags 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.461 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#406] Ignoring stale input buffer done callback: last flush index = 96, frameIndex = 93 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.461 7582 D/CCodecConfig: config failed => CORRUPTED
+c2 config diff is   c2::u32 raw.channel-count.value = 2 
+21:32:39.083
+Android
+Warning
+ 11-14 16:02:21.461 7582 W/Codec2Client: query -- param skipped: index = 1107298332. 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.461 7582 D/CCodec  : client requested max input size 663, which is smaller than what component recommended (8192); overriding with component recommendation. 
+21:32:39.083
+Android
+Warning
+ 11-14 16:02:21.461 7582 W/CCodec  : This behavior is subject to change. It is recommended that app developers double check whether the requested max input size is in reasonable range. 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.461 7582 D/CCodec  : encoding statistics level = 0
+setup formats input: AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 64
+int32_t bitrate = 64000
+int32_t channel-count = 2
+int32_t channel-mask = 0
+int32_t level = 0
+int32_t max-input-size = 8192
+int32_t max-output-channel-count = 8
+string mime = "audio/mp4a-latm"
+int32_t profile = 2
+int32_t sample-rate = 44100
+}
+setup formats output: AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-drc-output-loudness = -1
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 64
+int32_t buffer-batch-max-output-size = 0
+int32_t buffer-batch-threshold-output-size = 0
+int32_t channel-count = 2
+int32_t channel-mask = 0
+int32_t max-output-channel-count = 8
+string mime = "audio/raw"
+int32_t sample-rate = 44100
+int32_t android._config-pcm-encoding = 2
+} 
+21:32:39.083
+Android
+Log
+ 11-14 16:02:21.461 7582 I/CCodecConfig: query failed after returning 21 values (BAD_INDEX) 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.461 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#406] flushed work; ignored.
+[c2.goldfish.h264.decoder#406] Discard frames from previous generation. 
+21:32:39.083
+Android
+Debug
+ 11-14 16:02:21.462 7582 D/EGL_emulation: app_time_stats: avg=21.08ms min=1.70ms max=50.47ms count=35 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.470 7582 D/MediaCodec: keep callback message for reclaim 
+21:32:39.084
+Android
+Log
+ 11-14 16:02:21.470 7582 I/CCodecConfig: query failed after returning 21 values (BAD_INDEX) 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.471 7582 D/CCodecConfig: c2 config diff is   c2::i32 coding.drc.compression-mode.value = 2 
+21:32:39.084
+Android
+Warning
+ 11-14 16:02:21.471 7582 W/Codec2Client: query -- param skipped: index = 1342179345.
+query -- param skipped: index = 2415921170.
+query -- param skipped: index = 1610614798. 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.471 7582 D/MediaCodec: keep callback message for reclaim 
+21:32:39.084
+Android
+Log
+ 11-14 16:02:21.472 7582 I/MediaCodec: [c2.goldfish.h264.decoder] connecting to the same surface. Nothing to do. 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.472 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#406] MediaCodec discarded an unknown buffer 
+21:32:39.084
+Android
+Warning
+ 11-14 16:02:21.472 7582 W/Codec2Client: query -- param skipped: index = 1342179345.
+query -- param skipped: index = 2415921170.
+query -- param skipped: index = 1610614798. 
+21:32:39.084
+Android
+Log
+ 11-14 16:02:21.477 7582 I/hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.478 7582 D/CCodecBufferChannel: [c2.goldfish.h264.decoder#406] MediaCodec discarded an unknown buffer
+[c2.goldfish.h264.decoder#406] MediaCodec discarded an unknown buffer
+[c2.goldfish.h264.decoder#406] MediaCodec discarded an unknown buffer 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.478 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf339e0, reason disconnectFromSurface 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.479 7582 D/CCodecBufferChannel: [c2.android.aac.decoder#904] Created input block pool with allocatorID 16 => poolID 24 - OK (0) 
+21:32:39.084
+Android
+Log
+ 11-14 16:02:21.480 7582 I/CCodecBufferChannel: [c2.android.aac.decoder#904] Created output block pool with allocatorID 16 => poolID 42 - OK 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.480 7582 D/CCodecBufferChannel: [c2.android.aac.decoder#904] Configured output block pool ids 42 => OK 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.512 7582 D/CCodecBufferChannel: [c2.android.aac.decoder#480] MediaCodec discarded an unknown buffer
+[c2.android.aac.decoder#480] MediaCodec discarded an unknown buffer
+[c2.android.aac.decoder#480] MediaCodec discarded an unknown buffer
+[c2.android.aac.decoder#480] MediaCodec discarded an unknown buffer 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.520 7582 D/CCodecConfig: c2 config diff is   c2::u32 raw.crop.height = 720
+c2::u32 raw.crop.left = 0
+c2::u32 raw.crop.top = 0
+c2::u32 raw.crop.width = 1280 
+21:32:39.084
+Android
+Log
+ 11-14 16:02:21.527 7582 I/hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.534 7582 D/CCodecConfig: c2 config diff is   c2::float coding.drc.reference-level.value = -24
+c2::u32 raw.channel-mask.value = 12 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.534 7582 D/CCodecBuffers: [c2.android.aac.decoder#506:Output[N]] popFromStashAndRegister: at 1000000000000us, output format changed to AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-drc-output-loudness = -1
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 96
+int32_t buffer-batch-max-output-size = 0
+int32_t buffer-batch-threshold-output-size = 0
+int32_t channel-count = 2
+int32_t channel-mask = 12
+int32_t max-output-channel-count = 8
+string mime = "audio/raw"
+int32_t sample-rate = 48000
+int32_t android._config-pcm-encoding = 2
+} 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.582 7582 D/CCodecConfig: c2 config diff is   c2::u32 raw.crop.height = 1280
+c2::u32 raw.crop.left = 0
+c2::u32 raw.crop.top = 0
+c2::u32 raw.crop.width = 720 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.595 7582 D/CCodecConfig: c2 config diff is   c2::float coding.drc.reference-level.value = -24
+c2::u32 raw.channel-mask.value = 12 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.599 7582 D/CCodecBuffers: [c2.android.aac.decoder#904:Output[N]] popFromStashAndRegister: at 1000000000000us, output format changed to AMessage(what = 0x00000000) = {
+int32_t aac-drc-album-mode = 0
+int32_t aac-drc-boost-level = 127
+int32_t aac-drc-cut-level = 127
+int32_t aac-drc-effect-type = 3
+int32_t aac-drc-output-loudness = -1
+int32_t aac-encoded-target-level = -1
+int32_t aac-max-output-channel_count = 8
+int32_t aac-target-ref-level = 96
+int32_t buffer-batch-max-output-size = 0
+int32_t buffer-batch-threshold-output-size = 0
+int32_t channel-count = 2
+int32_t channel-mask = 12
+int32_t max-output-channel-count = 8
+string mime = "audio/raw"
+int32_t sample-rate = 44100
+int32_t android._config-pcm-encoding = 2
+} 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.624 7582 D/SurfaceUtils: connecting to surface 0xb40000701cf317d0, reason connectToSurface 
+21:32:39.084
+Android
+Log
+ 11-14 16:02:21.624 7582 I/MediaCodec: [c2.goldfish.h264.decoder] setting surface generation to 7763975 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.624 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf317d0, reason connectToSurface(reconnect)
+connecting to surface 0xb40000701cf317c0, reason connectToSurface(reconnect-with-listener) 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.624 7582 D/Codec2-OutputBufferQueue: remote graphic buffer migration 5/5 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.624 7582 D/Codec2Client: setOutputSurface -- failed to set consumer usage (6/BAD_INDEX) 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.630 7582 D/Codec2Client: setOutputSurface -- generation=7763975 consumer usage=0x900 
+21:32:39.084
+Android
+Warning
+ 11-14 16:02:21.633 7582 W/Codec2-OutputBufferQueue: receiving stale buffer: generation 7763975 , diff 2 : slot 5 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.641 7582 D/SurfaceUtils: connecting to surface 0xb40000701cf2d3b0, reason connectToSurface 
+21:32:39.084
+Android
+Log
+ 11-14 16:02:21.642 7582 I/MediaCodec: [c2.goldfish.h264.decoder] setting surface generation to 7763976 
+21:32:39.084
+Android
+Warning
+ 11-14 16:02:21.642 7582 W/Codec2-OutputBufferQueue: receiving stale buffer: generation 7763975 , diff 2 : slot 6 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.642 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf2d3b0, reason connectToSurface(reconnect)
+connecting to surface 0xb40000701cf2d3a0, reason connectToSurface(reconnect-with-listener) 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.642 7582 D/Codec2-OutputBufferQueue: remote graphic buffer migration 5/5 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.654 7582 D/Codec2Client: setOutputSurface -- failed to set consumer usage (6/BAD_INDEX)
+setOutputSurface -- generation=7763976 consumer usage=0x900 
+21:32:39.084
+Android
+Warning
+ 11-14 16:02:21.660 7582 W/Codec2-OutputBufferQueue: receiving stale buffer: generation 7763975 , diff 2 : slot 7 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.669 7582 D/Codec2Client: Surface configure completed 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.669 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf3e430, reason disconnectFromSurface 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.672 7582 D/Codec2Client: Surface configure completed 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.672 7582 D/SurfaceUtils: disconnecting from surface 0xb40000701cf3a010, reason disconnectFromSurface 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.751 7582 D/AudioTrack: getTimestamp_l(25): device stall time corrected using current time 1744959818997 
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.775 7582 D/AudioTrack: getTimestamp_l(24): device stall time corrected using current time 1744983916163 
+21:32:39.084
+Android
+Log
+ 11-14 16:02:21.934 7582 I/HWUI    : Davey! duration=825ms; Flags=0, FrameTimelineVsyncId=55439, IntendedVsync=1744244369709, Vsync=1744461036367, InputEventId=-420222126, HandleInputStart=1744466953663, AnimationStart=1744466955413, PerformTraversalsStart=1744751047455, DrawStart=1744751080580, FrameDeadline=1744877703017, FrameInterval=1744464552038, FrameStartTime=16666666, SyncQueued=1744827139330, SyncStart=1744881910955, IssueDrawCommandsStart=1744883111872, SwapBuffers=1744998794247, FrameCompleted=1745124400247, DequeueBufferDuration=1209, QueueBufferDuration=85291, GpuCompleted=1745124400247, SwapBuffersCompleted=1745000705080, DisplayPresentTime=0, CommandSubmissionCompleted=1744998794247,  
+21:32:39.084
+Android
+Debug
+ 11-14 16:02:21.945 7582 D/AudioTrack: getTimestamp_l(25): device stall time corrected using current time 1745154353497 
+21:32:39.085
+Android
+Warning
+ 11-14 16:02:22.413 7582 W/HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without... 
+21:32:39.085
+Android
+Warning
+ 11-14 16:02:22.414 7582 W/HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS 
+21:32:39.085
+Android
+Debug
+ 11-14 16:02:22.462 7582 D/EGL_emulation: app_time_stats: avg=19.74ms min=1.60ms max=148.54ms count=29 
+21:32:39.085
+Android
+Debug
+ 11-14 16:02:25.683 7582 D/BufferPoolAccessor2.0: bufferpool2 0xb4000070fcf33e88 : 0(0 size) total buffers - 0(0 size) used buffers - 95/101 (recycle/alloc) - 8/98 (fetch/transfer)
+evictor expired: 1, evicted: 1 
+21:32:39.085
+Android
+Debug
+ 11-14 16:02:26.684 7582 D/BufferPoolAccessor2.0: bufferpool2 0xb4000070fcf0ce28 : 5(40960 size) total buffers - 0(0 size) used buffers - 29/35 (recycle/alloc) - 6/35 (fetch/transfer)
+bufferpool2 0xb4000070fcf39418 : 0(0 size) total buffers - 0(0 size) used buffers - 170/180 (recycle/alloc) - 13/172 (fetch/transfer)
+bufferpool2 0xb4000070fcf330a8 : 5(40960 size) total buffers - 0(0 size) used buffers - 32/37 (recycle/alloc) - 7/37 (fetch/transfer)
+bufferpool2 0xb4000070fcf21688 : 5(31457280 size) total buffers - 4(25165824 size) used buffers - 27/32 (recycle/alloc) - 5/32 (fetch/transfer)
+bufferpool2 0xb4000070fcf24028 : 5(31457280 size) total buffers - 4(25165824 size) used buffers - 31/36 (recycle/alloc) - 5/36 (fetch/transfer)
+evictor expired: 5, evicted: 5 
+21:32:39.085
+Android
+Debug
+ 11-14 16:02:30.020 7582 D/EGL_emulation: app_time_stats: avg=2625.12ms min=117.12ms max=5133.12ms count=2 
+21:32:39.085
+Android
+Debug
+ 11-14 16:02:30.243 7582 D/EGL_emulation: app_time_stats: avg=418.89ms min=1.46ms max=7360.00ms count=18 
+21:32:39.085
+Android
+Debug
+ 11-14 16:02:31.038 7582 D/EGL_emulation: app_time_stats: avg=73.69ms min=9.08ms max=435.99ms count=12 
+21:32:59.082
+Android
+Debug
+ 11-14 16:02:40.129 7582 D/EGL_emulation: app_time_stats: avg=1500.14ms min=9.51ms max=8922.13ms count=6 
+21:32:59.082
+Android
+Warning
+ 11-14 16:02:40.380 7582 W/WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@216d5a5 
+21:32:59.082
+Android
+Debug
+ 11-14 16:02:40.404 7582 D/HWUI    : endAllActiveAnimators on 0xb4000071bcf2b720 (UnprojectedRipple) with handle 0xb4000070ecf61460 

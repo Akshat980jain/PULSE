@@ -1,0 +1,287 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isValidTimestamp(ts) {
+      return ts is timestamp && ts <= request.time;
+    }
+
+    function isValidMemberPair(members) {
+      return members is list
+        && members.size() == 2
+        && members[0] is string && members[0].size() >= 1 && members[0].size() <= 128
+        && members[1] is string && members[1].size() >= 1 && members[1].size() <= 128
+        && members[0] != members[1];
+    }
+
+    function listEntriesInMembers(uids, members) {
+      return uids is list
+        && uids.size() <= 2
+        && (uids.size() < 1 || uids[0] in members)
+        && (uids.size() < 2 || (uids[1] in members && uids[1] != uids[0]));
+    }
+
+    function isValidMessagingUser(data, userId) {
+      return data.keys().hasAll([
+          'uid',
+          'displayName',
+          'username',
+          'email',
+          'avatarUrl',
+          'supabaseUserId',
+          'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'uid',
+          'displayName',
+          'username',
+          'email',
+          'avatarUrl',
+          'supabaseUserId',
+          'updatedAt'
+        ])
+        && data.uid is string && data.uid == userId
+        && data.displayName is string && data.displayName.size() >= 1 && data.displayName.size() <= 80
+        && data.username is string && data.username.size() >= 1 && data.username.size() <= 48
+        && data.email is string && data.email.size() <= 160
+        && data.avatarUrl is string && data.avatarUrl.size() <= 1024
+        && data.supabaseUserId is string && data.supabaseUserId.size() <= 128
+        && isValidTimestamp(data.updatedAt);
+    }
+
+    function isValidDmThread(data, threadId) {
+      return data.keys().hasAll([
+          'memberUids',
+          'participantAId',
+          'participantAName',
+          'participantAUsername',
+          'participantAAvatarUrl',
+          'participantBId',
+          'participantBName',
+          'participantBUsername',
+          'participantBAvatarUrl',
+          'lastMessageText',
+          'lastSenderUid',
+          'unreadCountA',
+          'unreadCountB',
+          'lastMessageAt',
+          'createdAt',
+          'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'memberUids',
+          'participantAId',
+          'participantAName',
+          'participantAUsername',
+          'participantAAvatarUrl',
+          'participantBId',
+          'participantBName',
+          'participantBUsername',
+          'participantBAvatarUrl',
+          'lastMessageText',
+          'lastSenderUid',
+          'unreadCountA',
+          'unreadCountB',
+          'lastMessageAt',
+          'createdAt',
+          'updatedAt'
+        ])
+        && isValidMemberPair(data.memberUids)
+        && data.participantAId is string && data.participantAId == data.memberUids[0]
+        && data.participantBId is string && data.participantBId == data.memberUids[1]
+        && threadId == (data.participantAId + '_' + data.participantBId)
+        && data.participantAName is string && data.participantAName.size() >= 1 && data.participantAName.size() <= 80
+        && data.participantAUsername is string && data.participantAUsername.size() >= 1 && data.participantAUsername.size() <= 48
+        && data.participantAAvatarUrl is string && data.participantAAvatarUrl.size() <= 1024
+        && data.participantBName is string && data.participantBName.size() >= 1 && data.participantBName.size() <= 80
+        && data.participantBUsername is string && data.participantBUsername.size() >= 1 && data.participantBUsername.size() <= 48
+        && data.participantBAvatarUrl is string && data.participantBAvatarUrl.size() <= 1024
+        && data.lastMessageText is string && data.lastMessageText.size() <= 500
+        && data.lastSenderUid is string && data.lastSenderUid.size() <= 128
+        && data.unreadCountA is int && data.unreadCountA >= 0 && data.unreadCountA <= 100000
+        && data.unreadCountB is int && data.unreadCountB >= 0 && data.unreadCountB <= 100000
+        && isValidTimestamp(data.lastMessageAt)
+        && isValidTimestamp(data.createdAt)
+        && isValidTimestamp(data.updatedAt);
+    }
+
+    function isValidDmMessage(data, threadId) {
+      return data.keys().hasAll([
+          'threadId',
+          'memberUids',
+          'senderUid',
+          'senderUsername',
+          'senderDisplayName',
+          'senderAvatarUrl',
+          'text',
+          'likedByUids',
+          'readByUids',
+          'createdAt'
+        ])
+        && data.keys().hasOnly([
+          'threadId',
+          'memberUids',
+          'senderUid',
+          'senderUsername',
+          'senderDisplayName',
+          'senderAvatarUrl',
+          'text',
+          'likedByUids',
+          'readByUids',
+          'sharedPostId',
+          'sharedPostCaption',
+          'sharedPostImageUri',
+          'createdAt'
+        ])
+        && data.threadId is string && data.threadId == threadId
+        && isValidMemberPair(data.memberUids)
+        && data.senderUid is string && data.senderUid in data.memberUids
+        && data.senderUsername is string && data.senderUsername.size() >= 1 && data.senderUsername.size() <= 48
+        && data.senderDisplayName is string && data.senderDisplayName.size() >= 1 && data.senderDisplayName.size() <= 80
+        && data.senderAvatarUrl is string && data.senderAvatarUrl.size() <= 1024
+        && data.text is string && data.text.size() >= 1 && data.text.size() <= 2000
+        && listEntriesInMembers(data.likedByUids, data.memberUids)
+        && listEntriesInMembers(data.readByUids, data.memberUids)
+        && data.readByUids.size() >= 1
+        && (!('sharedPostId' in data) || (data.sharedPostId is string && data.sharedPostId.size() >= 1 && data.sharedPostId.size() <= 128))
+        && (!('sharedPostCaption' in data) || (data.sharedPostCaption is string && data.sharedPostCaption.size() <= 500))
+        && (!('sharedPostImageUri' in data) || (data.sharedPostImageUri is string && data.sharedPostImageUri.size() <= 1024))
+        && isValidTimestamp(data.createdAt);
+    }
+
+    function isValidPostComment(data, postId) {
+      return data.keys().hasAll([
+          'postId',
+          'authorUid',
+          'authorUsername',
+          'authorDisplayName',
+          'authorAvatarUrl',
+          'text',
+          'likedByUids',
+          'createdAt',
+          'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'postId',
+          'authorUid',
+          'authorUsername',
+          'authorDisplayName',
+          'authorAvatarUrl',
+          'text',
+          'parentCommentId',
+          'replyToUsername',
+          'likedByUids',
+          'createdAt',
+          'updatedAt'
+        ])
+        && data.postId is string && data.postId == postId
+        && data.authorUid is string && data.authorUid.size() >= 1 && data.authorUid.size() <= 128
+        && data.authorUsername is string && data.authorUsername.size() >= 1 && data.authorUsername.size() <= 48
+        && data.authorDisplayName is string && data.authorDisplayName.size() >= 1 && data.authorDisplayName.size() <= 80
+        && data.authorAvatarUrl is string && data.authorAvatarUrl.size() <= 1024
+        && data.text is string && data.text.size() >= 1 && data.text.size() <= 1000
+        && (!('parentCommentId' in data) || (data.parentCommentId is string && data.parentCommentId.size() >= 1 && data.parentCommentId.size() <= 128))
+        && (!('replyToUsername' in data) || (data.replyToUsername is string && data.replyToUsername.size() >= 1 && data.replyToUsername.size() <= 48))
+        && data.likedByUids is list && data.likedByUids.size() <= 500
+        && isValidTimestamp(data.createdAt)
+        && isValidTimestamp(data.updatedAt);
+    }
+
+    match /messaging_users/{userId} {
+      allow get, list: if isAuthenticated();
+      allow create, update: if isOwner(userId) && isValidMessagingUser(request.resource.data, userId);
+      allow delete: if false;
+    }
+
+    match /dm_threads/{threadId} {
+      allow get, list: if isAuthenticated() && request.auth.uid in resource.data.memberUids;
+      allow create: if isAuthenticated()
+        && request.auth.uid in request.resource.data.memberUids
+        && isValidDmThread(request.resource.data, threadId);
+      allow update: if isAuthenticated()
+        && request.auth.uid in resource.data.memberUids
+        && isValidDmThread(request.resource.data, threadId)
+        && request.resource.data.memberUids == resource.data.memberUids
+        && request.resource.data.participantAId == resource.data.participantAId
+        && request.resource.data.participantBId == resource.data.participantBId
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if false;
+
+      match /messages/{messageId} {
+        allow get, list: if isAuthenticated() && request.auth.uid in resource.data.memberUids;
+        allow create: if isAuthenticated()
+          && request.auth.uid in request.resource.data.memberUids
+          && request.resource.data.senderUid == request.auth.uid
+          && request.resource.data.likedByUids.size() == 0
+          && request.resource.data.readByUids.size() == 1
+          && request.auth.uid in request.resource.data.readByUids
+          && isValidDmMessage(request.resource.data, threadId);
+        allow update: if isAuthenticated()
+          && request.auth.uid in resource.data.memberUids
+          && isValidDmMessage(request.resource.data, threadId)
+          && (
+            (
+              request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likedByUids', 'readByUids'])
+              && resource.data.senderUid in request.resource.data.readByUids
+            )
+            || (
+              resource.data.senderUid == request.auth.uid
+              && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['text'])
+            )
+          );
+        allow delete: if isAuthenticated()
+          && request.auth.uid in resource.data.memberUids
+          && resource.data.senderUid == request.auth.uid;
+      }
+    }
+
+    match /posts/{postId}/comments/{commentId} {
+      allow get, list: if isAuthenticated();
+      allow create: if isAuthenticated()
+        && request.resource.data.authorUid == request.auth.uid
+        && request.resource.data.likedByUids.size() == 0
+        && isValidPostComment(request.resource.data, postId);
+      allow update: if isAuthenticated()
+        && isValidPostComment(request.resource.data, postId)
+        && request.resource.data.postId == resource.data.postId
+        && request.resource.data.authorUid == resource.data.authorUid
+        && request.resource.data.createdAt == resource.data.createdAt
+        && (
+          (
+            request.auth.uid == resource.data.authorUid
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['text', 'updatedAt'])
+          )
+          || (
+            request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likedByUids', 'updatedAt'])
+            && (
+              (
+                request.resource.data.likedByUids.hasAll(resource.data.likedByUids)
+                && request.resource.data.likedByUids.size() == resource.data.likedByUids.size() + 1
+                && request.auth.uid in request.resource.data.likedByUids
+                && !(request.auth.uid in resource.data.likedByUids)
+              )
+              || (
+                resource.data.likedByUids.hasAll(request.resource.data.likedByUids)
+                && request.resource.data.likedByUids.size() + 1 == resource.data.likedByUids.size()
+                && request.auth.uid in resource.data.likedByUids
+                && !(request.auth.uid in request.resource.data.likedByUids)
+              )
+            )
+          )
+        );
+      allow delete: if isAuthenticated() && resource.data.authorUid == request.auth.uid;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

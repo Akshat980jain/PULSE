@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Pulse</string>
+    <string name="nav_feed">Feed</string>
+    <string name="nav_explore">Explore</string>
+    <string name="nav_create">Studio</string>
+    <string name="nav_loops">Loops</string>
+    <string name="nav_profile">Profile</string>
+    <string name="feed_mode_curated">Pulse curated</string>
+    <string name="feed_mode_following">Following</string>
+    <string name="action_activity">Activity notifications</string>
+    <string name="action_messages">Direct messages</string>
+    <string name="action_like">Like post</string>
+    <string name="action_comment">View comments</string>
+    <string name="action_share">Share to direct message</string>
+    <string name="action_bookmark">Save to collection</string>
+    <string name="action_more_options">Post options</string>
+    <string name="story_your_story">Your story</string>
+    <string name="search_placeholder">Search creators, tags, or cities…</string>
+    <string name="studio_title">Darkroom studio</string>
+    <string name="studio_pick_photo">Choose from device photo library</string>
+    <string name="studio_publish_post">Publish to feed</string>
+    <string name="studio_publish_story">Share to 24h story</string>
+    <string name="studio_publish_loop">Publish to loops</string>
+    <string name="profile_edit">Edit profile</string>
+    <string name="profile_follow">Follow</string>
+    <string name="profile_following">Following</string>
+    <string name="profile_message">Message</string>
+    <string name="ugc_report">Report content</string>
+    <string name="ugc_block">Block creator</string>
+</resources>

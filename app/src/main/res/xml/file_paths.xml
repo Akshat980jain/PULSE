@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <files-path
+        name="darkroom_uploads"
+        path="darkroom_uploads/" />
+    <files-path
+        name="internal_files"
+        path="." />
+    <cache-path
+        name="camera_cache"
+        path="." />
+    <external-files-path
+        name="external_darkroom_uploads"
+        path="." />
+    <external-cache-path
+        name="external_camera_cache"
+        path="." />
+</paths>
