@@ -2,6 +2,11 @@ package com.example.ui.screens
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -33,6 +38,7 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.Logout
 import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material.icons.filled.AddComment
+import androidx.compose.material.icons.filled.Block
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.DoneAll
@@ -42,6 +48,7 @@ import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.MarkChatUnread
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.outlined.ChatBubbleOutline
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -56,8 +63,10 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
@@ -67,6 +76,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -83,6 +93,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.R
+import com.example.data.firebase.BlockedUserRecord
 import com.example.data.firebase.DmMessage
 import com.example.data.firebase.DmThread
 import com.example.data.firebase.FirebaseDatabaseModule
@@ -157,6 +168,8 @@ fun FirebaseMessagesTabScreen(
             val activeThreadId by messagingViewModel.activeThreadId.collectAsStateWithLifecycle()
             val activeTargetUser by messagingViewModel.activeTargetUser.collectAsStateWithLifecycle()
             val activeMessagesState by messagingViewModel.activeMessagesState.collectAsStateWithLifecycle()
+            val blockedUsers by messagingViewModel.blockedUsersState.collectAsStateWithLifecycle()
+            val isOtherParticipantTyping by messagingViewModel.isOtherParticipantTyping.collectAsStateWithLifecycle()
             val totalUnreadCount by messagingViewModel.totalUnreadCount.collectAsStateWithLifecycle()
             val isSending by messagingViewModel.isSending.collectAsStateWithLifecycle()
             val transientError by messagingViewModel.transientError.collectAsStateWithLifecycle()
@@ -212,13 +225,19 @@ fun FirebaseMessagesTabScreen(
                 activeThreadId = activeThreadId,
                 activeTargetUser = activeTargetUser,
                 activeMessagesState = activeMessagesState,
+                blockedUsers = blockedUsers,
+                isOtherParticipantTyping = isOtherParticipantTyping,
                 isSending = isSending,
                 transientError = transientError,
                 onSelectUserForChat = { messagingViewModel.openThreadWithUser(it) },
                 onSelectThread = { messagingViewModel.openExistingThread(it) },
                 onCloseActiveThread = { messagingViewModel.closeActiveThread() },
+                onDraftTextChanged = { messagingViewModel.onComposerTextChanged(it) },
+                onClearTyping = { messagingViewModel.clearTypingStatus() },
                 onSendMessage = { text -> messagingViewModel.sendMessage(text) },
                 onToggleLikeMessage = { threadId, msg -> messagingViewModel.toggleLikeMessage(threadId, msg) },
+                onBlockUser = { target -> messagingViewModel.blockUser(target) },
+                onUnblockUser = { blockedUid -> messagingViewModel.unblockUser(blockedUid) },
                 onDismissError = { messagingViewModel.clearTransientError() },
                 onSignOutMessaging = {
                     messagingViewModel.closeActiveThread()
@@ -427,9 +446,16 @@ fun FirebaseMessagesWorkspace(
     onToggleLikeMessage: (threadId: String, message: DmMessage) -> Unit,
     onDismissError: () -> Unit,
     onSignOutMessaging: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    blockedUsers: List<BlockedUserRecord> = emptyList(),
+    isOtherParticipantTyping: Boolean = false,
+    onDraftTextChanged: (String) -> Unit = {},
+    onClearTyping: () -> Unit = {},
+    onBlockUser: (MessagingUser) -> Unit = {},
+    onUnblockUser: (String) -> Unit = {}
 ) {
     var showNewChatSheet by remember { mutableStateOf(false) }
+    var showBlockedUsersSheet by remember { mutableStateOf(false) }
 
     BackHandler(enabled = activeThreadId != null) {
         onCloseActiveThread()
@@ -481,7 +507,9 @@ fun FirebaseMessagesWorkspace(
                     currentUserProfile = currentUserProfile,
                     directoryState = directoryState,
                     threadsState = threadsState,
+                    blockedUsersCount = blockedUsers.size,
                     onOpenNewChatPicker = { showNewChatSheet = true },
+                    onOpenBlockedUsers = { showBlockedUsersSheet = true },
                     onSelectUserForChat = onSelectUserForChat,
                     onSelectThread = onSelectThread,
                     onSignOutMessaging = onSignOutMessaging,
@@ -493,10 +521,14 @@ fun FirebaseMessagesWorkspace(
                     threadId = activeThreadId,
                     targetUser = activeTargetUser,
                     messagesState = activeMessagesState,
+                    isOtherParticipantTyping = isOtherParticipantTyping,
                     isSending = isSending,
                     onBack = onCloseActiveThread,
+                    onDraftTextChanged = onDraftTextChanged,
+                    onClearTyping = onClearTyping,
                     onSendMessage = onSendMessage,
                     onToggleLikeMessage = { msg -> onToggleLikeMessage(activeThreadId, msg) },
+                    onBlockUser = { onBlockUser(activeTargetUser) },
                     modifier = Modifier.weight(1f)
                 )
             }
@@ -516,6 +548,14 @@ fun FirebaseMessagesWorkspace(
             }
         )
     }
+
+    if (showBlockedUsersSheet) {
+        FirebaseBlockedUsersSheet(
+            blockedUsers = blockedUsers,
+            onDismiss = { showBlockedUsersSheet = false },
+            onUnblockUser = onUnblockUser
+        )
+    }
 }
 
 @Composable
@@ -524,7 +564,9 @@ private fun FirebaseInboxView(
     currentUserProfile: MessagingUser,
     directoryState: MessagingUiState<List<MessagingUser>>,
     threadsState: MessagingUiState<List<DmThread>>,
+    blockedUsersCount: Int,
     onOpenNewChatPicker: () -> Unit,
+    onOpenBlockedUsers: () -> Unit,
     onSelectUserForChat: (MessagingUser) -> Unit,
     onSelectThread: (DmThread) -> Unit,
     onSignOutMessaging: () -> Unit,
@@ -551,6 +593,21 @@ private fun FirebaseInboxView(
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
+            }
+
+            if (blockedUsersCount > 0) {
+                IconButton(
+                    onClick = onOpenBlockedUsers,
+                    modifier = Modifier
+                        .size(48.dp)
+                        .testTag("firebase_blocked_users_button")
+                ) {
+                    Icon(
+                        imageVector = Icons.Filled.Block,
+                        contentDescription = "Manage blocked users ($blockedUsersCount)",
+                        tint = SignalCrimson
+                    )
+                }
             }
 
             IconButton(
@@ -849,13 +906,18 @@ private fun FirebaseConversationView(
     threadId: String,
     targetUser: MessagingUser,
     messagesState: MessagingUiState<List<DmMessage>>,
+    isOtherParticipantTyping: Boolean,
     isSending: Boolean,
     onBack: () -> Unit,
+    onDraftTextChanged: (String) -> Unit,
+    onClearTyping: () -> Unit,
     onSendMessage: (String) -> Unit,
     onToggleLikeMessage: (DmMessage) -> Unit,
+    onBlockUser: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     var draftText by remember(threadId) { mutableStateOf("") }
+    var showBlockConfirmDialog by remember(threadId) { mutableStateOf(false) }
     val listState = rememberLazyListState()
     val haptics = rememberPulseHaptics()
 
@@ -863,6 +925,12 @@ private fun FirebaseConversationView(
     LaunchedEffect(messages.size) {
         if (messages.isNotEmpty()) {
             listState.animateScrollToItem(messages.lastIndex)
+        }
+    }
+
+    DisposableEffect(threadId) {
+        onDispose {
+            onClearTyping()
         }
     }
 
@@ -880,7 +948,10 @@ private fun FirebaseConversationView(
                 .padding(horizontal = 8.dp, vertical = 10.dp)
         ) {
             IconButton(
-                onClick = onBack,
+                onClick = {
+                    onClearTyping()
+                    onBack()
+                },
                 modifier = Modifier
                     .size(48.dp)
                     .testTag("firebase_chat_back_button")
@@ -910,11 +981,29 @@ private fun FirebaseConversationView(
                     overflow = TextOverflow.Ellipsis
                 )
                 Text(
-                    text = "@${targetUser.username} · Live Firebase chat",
+                    text = if (isOtherParticipantTyping) {
+                        "@${targetUser.username} · Typing…"
+                    } else {
+                        "@${targetUser.username} · Live Firebase chat"
+                    },
                     style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    color = if (isOtherParticipantTyping) CobaltPulseSoft else MaterialTheme.colorScheme.onSurfaceVariant,
+                    fontWeight = if (isOtherParticipantTyping) FontWeight.SemiBold else FontWeight.Normal,
                     maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
+                    overflow = TextOverflow.Ellipsis,
+                    modifier = Modifier.testTag("firebase_header_typing_status")
+                )
+            }
+            IconButton(
+                onClick = { showBlockConfirmDialog = true },
+                modifier = Modifier
+                    .size(48.dp)
+                    .testTag("firebase_block_user_button")
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.Block,
+                    contentDescription = "Block @${targetUser.username}",
+                    tint = SignalCrimson
                 )
             }
         }
@@ -1127,6 +1216,16 @@ private fun FirebaseConversationView(
             }
         }
 
+        AnimatedVisibility(visible = isOtherParticipantTyping) {
+            FirebaseTypingIndicatorBanner(
+                username = targetUser.username,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 6.dp)
+                    .testTag("firebase_typing_indicator")
+            )
+        }
+
         HorizontalDivider(color = MaterialTheme.colorScheme.outline)
 
         // Sticky Message Composer
@@ -1141,7 +1240,12 @@ private fun FirebaseConversationView(
         ) {
             OutlinedTextField(
                 value = draftText,
-                onValueChange = { if (it.length <= 2000) draftText = it },
+                onValueChange = { next ->
+                    if (next.length <= 2000) {
+                        draftText = next
+                        onDraftTextChanged(next)
+                    }
+                },
                 placeholder = { Text("Message @${targetUser.username}…") },
                 singleLine = false,
                 maxLines = 4,
@@ -1167,6 +1271,7 @@ private fun FirebaseConversationView(
                         val toSend = draftText.trim()
                         if (toSend.isNotEmpty()) {
                             haptics.performSendHaptic()
+                            onClearTyping()
                             onSendMessage(toSend)
                             draftText = ""
                         }
@@ -1191,6 +1296,109 @@ private fun FirebaseConversationView(
                 }
             }
         }
+    }
+
+    if (showBlockConfirmDialog) {
+        AlertDialog(
+            onDismissRequest = { showBlockConfirmDialog = false },
+            containerColor = MaterialTheme.colorScheme.surface,
+            title = {
+                Text(
+                    text = "Block @${targetUser.username}?",
+                    color = MaterialTheme.colorScheme.onSurface,
+                    fontWeight = FontWeight.Bold
+                )
+            },
+            text = {
+                Text(
+                    text = "Messages and threads with ${targetUser.displayName.ifBlank { "@${targetUser.username}" }} will be hidden from your inbox and chat stream. You can unblock them anytime.",
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        showBlockConfirmDialog = false
+                        onBlockUser()
+                    },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = SignalCrimson,
+                        contentColor = Color.White
+                    ),
+                    modifier = Modifier.testTag("firebase_confirm_block_button")
+                ) {
+                    Text("Block User")
+                }
+            },
+            dismissButton = {
+                TextButton(
+                    onClick = { showBlockConfirmDialog = false },
+                    modifier = Modifier.testTag("firebase_cancel_block_button")
+                ) {
+                    Text("Cancel")
+                }
+            },
+            modifier = Modifier.testTag("firebase_block_confirm_dialog")
+        )
+    }
+}
+
+@Composable
+private fun FirebaseTypingIndicatorBanner(
+    username: String,
+    modifier: Modifier = Modifier
+) {
+    val transition = rememberInfiniteTransition(label = "firebase_typing_dots")
+    val dot1 by transition.animateFloat(
+        initialValue = 0.25f,
+        targetValue = 1f,
+        animationSpec = infiniteRepeatable(tween(500), RepeatMode.Reverse),
+        label = "dot1"
+    )
+    val dot2 by transition.animateFloat(
+        initialValue = 0.25f,
+        targetValue = 1f,
+        animationSpec = infiniteRepeatable(tween(500, delayMillis = 150), RepeatMode.Reverse),
+        label = "dot2"
+    )
+    val dot3 by transition.animateFloat(
+        initialValue = 0.25f,
+        targetValue = 1f,
+        animationSpec = infiniteRepeatable(tween(500, delayMillis = 300), RepeatMode.Reverse),
+        label = "dot3"
+    )
+
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        modifier = modifier
+    ) {
+        Surface(
+            color = MaterialTheme.colorScheme.surfaceVariant,
+            shape = RoundedCornerShape(14.dp),
+            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(4.dp),
+                modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)
+            ) {
+                listOf(dot1, dot2, dot3).forEach { alphaValue ->
+                    Box(
+                        modifier = Modifier
+                            .size(6.dp)
+                            .alpha(alphaValue)
+                            .clip(CircleShape)
+                            .background(CobaltPulseSoft)
+                    )
+                }
+            }
+        }
+        Text(
+            text = "@$username is typing…",
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
     }
 }
 
@@ -1383,3 +1591,106 @@ private fun FirebaseNewChatPickerSheet(
         }
     }
 }
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun FirebaseBlockedUsersSheet(
+    blockedUsers: List<BlockedUserRecord>,
+    onDismiss: () -> Unit,
+    onUnblockUser: (String) -> Unit
+) {
+    val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+    ModalBottomSheet(
+        onDismissRequest = onDismiss,
+        sheetState = sheetState,
+        containerColor = MaterialTheme.colorScheme.surface,
+        modifier = Modifier.testTag("firebase_blocked_users_sheet")
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .navigationBarsPadding()
+                .padding(horizontal = 16.dp, vertical = 8.dp)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = "Blocked Accounts",
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                    Text(
+                        text = "Blocked users cannot appear in your chat threads or inbox.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+                IconButton(onClick = onDismiss) {
+                    Icon(
+                        imageVector = Icons.Filled.Close,
+                        contentDescription = "Close blocked accounts sheet",
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            if (blockedUsers.isEmpty()) {
+                Text(
+                    text = "No blocked accounts.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(vertical = 24.dp)
+                )
+            } else {
+                LazyColumn(
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                    contentPadding = PaddingValues(bottom = 24.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .heightIn(max = 320.dp)
+                ) {
+                    items(blockedUsers, key = { it.blockedUid.ifBlank { it.id } }) { record ->
+                        Surface(
+                            color = MaterialTheme.colorScheme.surfaceVariant,
+                            shape = RoundedCornerShape(14.dp),
+                            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier.padding(horizontal = 14.dp, vertical = 12.dp)
+                            ) {
+                                Column(modifier = Modifier.weight(1f)) {
+                                    Text(
+                                        text = record.blockedDisplayName.ifBlank { "Pulse Creator" },
+                                        style = MaterialTheme.typography.titleSmall,
+                                        fontWeight = FontWeight.SemiBold,
+                                        color = MaterialTheme.colorScheme.onSurface
+                                    )
+                                    Text(
+                                        text = "@${record.blockedUsername.ifBlank { "creator" }}",
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
+                                }
+                                OutlinedButton(
+                                    onClick = { onUnblockUser(record.blockedUid) },
+                                    modifier = Modifier.testTag("firebase_unblock_user_${record.blockedUid}")
+                                ) {
+                                    Text("Unblock")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -7,6 +7,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentId
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.IgnoreExtraProperties
+import com.google.firebase.firestore.PropertyName
 import com.google.firebase.firestore.ServerTimestamp
 import kotlinx.coroutines.CancellationException
 import org.json.JSONArray
@@ -68,6 +69,9 @@ fun buildDeterministicThreadId(uidFirst: String, uidSecond: String): String {
     val sorted = listOf(uidFirst.trim(), uidSecond.trim()).sorted()
     return "${sorted[0]}_${sorted[1]}"
 }
+
+fun buildBlockDocumentId(blockerUid: String, blockedUid: String): String =
+    "${blockerUid.trim()}_${blockedUid.trim()}"
 
 fun formatFirestoreRelativeTime(timestamp: Timestamp?): String {
     val millis = timestamp?.toDate()?.time ?: return "Now"
@@ -195,4 +199,29 @@ data class PostComment(
     val likeCount: Int
         get() = likedByUids.size
 }
+
+@Keep
+@IgnoreExtraProperties
+data class TypingStatus(
+    @DocumentId val id: String = "",
+    val threadId: String = "",
+    val memberUids: List<String> = emptyList(),
+    val userId: String = "",
+    @get:PropertyName("isTyping")
+    @PropertyName("isTyping")
+    val isTyping: Boolean = false,
+    @ServerTimestamp val updatedAt: Timestamp? = null
+)
+
+@Keep
+@IgnoreExtraProperties
+data class BlockedUserRecord(
+    @DocumentId val id: String = "",
+    val blockerUid: String = "",
+    val blockedUid: String = "",
+    val blockedUsername: String = "",
+    val blockedDisplayName: String = "",
+    @ServerTimestamp val createdAt: Timestamp? = null
+)
+
 

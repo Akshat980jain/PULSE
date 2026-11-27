@@ -527,3 +527,160 @@ test("posts comments: full CRUD with owner edit/delete, authenticated like toggl
   );
   await assertSucceeds(commentRef.delete());
 });
+
+test("dm_threads typing: participant can broadcast and observe isTyping state; spoofing and outsiders blocked", async () => {
+  const unauthDb = testEnv.unauthenticatedContext().firestore();
+  const aliceDb = testEnv.authenticatedContext(ALICE_UID).firestore();
+  const bobDb = testEnv.authenticatedContext(BOB_UID).firestore();
+  const eveDb = testEnv.authenticatedContext(EVE_UID).firestore();
+
+  await assertSucceeds(
+    aliceDb.collection("dm_threads").doc(THREAD_AB).set(buildValidThread())
+  );
+
+  // Alice broadcasts isTyping = true in her own typing doc
+  const aliceTypingRef = aliceDb
+    .collection("dm_threads")
+    .doc(THREAD_AB)
+    .collection("typing")
+    .doc(ALICE_UID);
+  await assertSucceeds(
+    aliceTypingRef.set({
+      threadId: THREAD_AB,
+      memberUids: [ALICE_UID, BOB_UID],
+      userId: ALICE_UID,
+      isTyping: true,
+      updatedAt: pastTime(500),
+    })
+  );
+
+  // Bob observes typing statuses via Kotlin-mirrored query
+  await assertSucceeds(
+    bobDb
+      .collection("dm_threads")
+      .doc(THREAD_AB)
+      .collection("typing")
+      .where("memberUids", "array-contains", BOB_UID)
+      .get()
+  );
+
+  // Bob cannot overwrite Alice's typing doc
+  await assertFails(
+    bobDb
+      .collection("dm_threads")
+      .doc(THREAD_AB)
+      .collection("typing")
+      .doc(ALICE_UID)
+      .set({
+        threadId: THREAD_AB,
+        memberUids: [ALICE_UID, BOB_UID],
+        userId: ALICE_UID,
+        isTyping: false,
+        updatedAt: pastTime(400),
+      })
+  );
+
+  // Unauthenticated and outsider Eve cannot read or write typing docs
+  await assertFails(
+    unauthDb
+      .collection("dm_threads")
+      .doc(THREAD_AB)
+      .collection("typing")
+      .doc(ALICE_UID)
+      .get()
+  );
+  await assertFails(
+    eveDb
+      .collection("dm_threads")
+      .doc(THREAD_AB)
+      .collection("typing")
+      .where("memberUids", "array-contains", ALICE_UID)
+      .get()
+  );
+  await assertFails(
+    eveDb
+      .collection("dm_threads")
+      .doc(THREAD_AB)
+      .collection("typing")
+      .doc(EVE_UID)
+      .set({
+        threadId: THREAD_AB,
+        memberUids: [ALICE_UID, EVE_UID],
+        userId: EVE_UID,
+        isTyping: true,
+        updatedAt: pastTime(300),
+      })
+  );
+
+  // Alice clears isTyping = false
+  await assertSucceeds(
+    aliceTypingRef.set({
+      threadId: THREAD_AB,
+      memberUids: [ALICE_UID, BOB_UID],
+      userId: ALICE_UID,
+      isTyping: false,
+      updatedAt: pastTime(200),
+    })
+  );
+});
+
+test("blocked: user can block, query own blocked list, and unblock; cross-user read/write and self-block rejected", async () => {
+  const unauthDb = testEnv.unauthenticatedContext().firestore();
+  const aliceDb = testEnv.authenticatedContext(ALICE_UID).firestore();
+  const bobDb = testEnv.authenticatedContext(BOB_UID).firestore();
+  const blockId = `${ALICE_UID}_${BOB_UID}`;
+
+  const validBlockPayload = {
+    blockerUid: ALICE_UID,
+    blockedUid: BOB_UID,
+    blockedUsername: "bobpark",
+    blockedDisplayName: "Bob Park",
+    createdAt: pastTime(1000),
+  };
+
+  // Unauthenticated rejected
+  await assertFails(
+    unauthDb.collection("blocked").where("blockerUid", "==", ALICE_UID).get()
+  );
+  await assertFails(
+    unauthDb.collection("blocked").doc(blockId).set(validBlockPayload)
+  );
+
+  // Self-block rejected
+  await assertFails(
+    aliceDb.collection("blocked").doc(`${ALICE_UID}_${ALICE_UID}`).set({
+      blockerUid: ALICE_UID,
+      blockedUid: ALICE_UID,
+      blockedUsername: "alicelin",
+      blockedDisplayName: "Alice Lin",
+      createdAt: pastTime(1000),
+    })
+  );
+
+  // Alice creates block doc and queries her own blocked collection
+  await assertSucceeds(
+    aliceDb.collection("blocked").doc(blockId).set(validBlockPayload)
+  );
+  await assertSucceeds(
+    aliceDb.collection("blocked").where("blockerUid", "==", ALICE_UID).get()
+  );
+
+  // Bob cannot read, spoof, or delete Alice's block record
+  await assertFails(
+    bobDb.collection("blocked").where("blockerUid", "==", ALICE_UID).get()
+  );
+  await assertFails(bobDb.collection("blocked").doc(blockId).get());
+  await assertFails(bobDb.collection("blocked").doc(blockId).delete());
+  await assertFails(
+    bobDb
+      .collection("blocked")
+      .doc(`${ALICE_UID}_${EVE_UID}`)
+      .set({
+        ...validBlockPayload,
+        blockedUid: EVE_UID,
+      })
+  );
+
+  // Alice can unblock (delete) her block record
+  await assertSucceeds(aliceDb.collection("blocked").doc(blockId).delete());
+});

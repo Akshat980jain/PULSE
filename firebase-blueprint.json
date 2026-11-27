@@ -272,6 +272,76 @@
         "createdAt",
         "updatedAt"
       ]
+    },
+    "TypingStatus": {
+      "title": "TypingStatus",
+      "description": "Real-time typing indicator status for a participant inside a 1-on-1 DM thread.",
+      "type": "object",
+      "properties": {
+        "threadId": {
+          "type": "string",
+          "description": "Parent dm_threads document ID."
+        },
+        "memberUids": {
+          "type": "array",
+          "description": "Denormalized two-element array of participant Firebase UIDs."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the typing participant matching the document ID."
+        },
+        "isTyping": {
+          "type": "boolean",
+          "description": "Whether the participant is currently typing in this thread."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest typing state broadcast (FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "threadId",
+        "memberUids",
+        "userId",
+        "isTyping",
+        "updatedAt"
+      ]
+    },
+    "BlockedUser": {
+      "title": "BlockedUser",
+      "description": "Record representing one Firebase user blocking another user from appearing in chats and threads.",
+      "type": "object",
+      "properties": {
+        "blockerUid": {
+          "type": "string",
+          "description": "Firebase Auth UID of the user who initiated the block."
+        },
+        "blockedUid": {
+          "type": "string",
+          "description": "Firebase Auth UID of the blocked user."
+        },
+        "blockedUsername": {
+          "type": "string",
+          "description": "Username snapshot of the blocked user."
+        },
+        "blockedDisplayName": {
+          "type": "string",
+          "description": "Display name snapshot of the blocked user."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the block was created (FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "blockerUid",
+        "blockedUid",
+        "blockedUsername",
+        "blockedDisplayName",
+        "createdAt"
+      ]
     }
   },
   "firestore": {
@@ -292,6 +362,18 @@
         "$ref": "#/entities/DmMessage"
       },
       "description": "Real-time direct messages inside a conversation thread with denormalized memberUids."
+    },
+    "/dm_threads/{threadId}/typing/{userId}": {
+      "schema": {
+        "$ref": "#/entities/TypingStatus"
+      },
+      "description": "Real-time per-participant typing indicators inside a 1-on-1 conversation thread."
+    },
+    "/blocked/{blockId}": {
+      "schema": {
+        "$ref": "#/entities/BlockedUser"
+      },
+      "description": "Per-user block list scoped to blockerUid to filter blocked users and messages from threads."
     },
     "/posts/{postId}/comments/{commentId}": {
       "schema": {

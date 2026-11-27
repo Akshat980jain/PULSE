@@ -422,9 +422,155 @@ class FirebaseMessagingRepository(
         }
     }
 
+    fun observeTypingStatuses(threadId: String, currentUid: String): Flow<List<TypingStatus>> = flow {
+        require(threadId.isNotBlank() && currentUid.isNotBlank()) {
+            "Thread ID and current UID must not be blank."
+        }
+        val path = "$COLLECTION_DM_THREADS/$threadId/$SUBCOLLECTION_TYPING"
+        emitAll(
+            db.collection(COLLECTION_DM_THREADS)
+                .document(threadId)
+                .collection(SUBCOLLECTION_TYPING)
+                .whereArrayContains("memberUids", currentUid)
+                .snapshots()
+                .map { snapshot ->
+                    snapshot.toObjects(
+                        TypingStatus::class.java,
+                        DocumentSnapshot.ServerTimestampBehavior.ESTIMATE
+                    )
+                }
+                .catch { error ->
+                    val firestoreError = generateSequence(error) { it.cause }
+                        .filterIsInstance<FirebaseFirestoreException>()
+                        .firstOrNull()
+                    if (firestoreError == null && error is CancellationException) throw error
+                    val exceptionToLog = firestoreError ?: (error as? Exception)
+                    if (exceptionToLog != null && auth?.currentUser?.uid == currentUid) {
+                        handleFirestoreError(exceptionToLog, OperationType.LIST, path)
+                    }
+                    throw error
+                }
+        )
+    }
+
+    suspend fun setTypingStatus(
+        threadId: String,
+        memberUids: List<String>,
+        isTyping: Boolean
+    ): Result<Unit> {
+        var docPath = "$COLLECTION_DM_THREADS/$threadId/$SUBCOLLECTION_TYPING"
+        return try {
+            val uid = requireUserId()
+            require(threadId.isNotBlank()) { "Thread ID must not be blank." }
+            require(memberUids.size == 2 && uid in memberUids) {
+                "Thread memberUids must contain exactly 2 valid participants including current user."
+            }
+            docPath = "$COLLECTION_DM_THREADS/$threadId/$SUBCOLLECTION_TYPING/$uid"
+            val payload = mapOf(
+                "threadId" to threadId,
+                "memberUids" to memberUids,
+                "userId" to uid,
+                "isTyping" to isTyping,
+                "updatedAt" to FieldValue.serverTimestamp()
+            )
+            db.collection(COLLECTION_DM_THREADS)
+                .document(threadId)
+                .collection(SUBCOLLECTION_TYPING)
+                .document(uid)
+                .set(payload)
+                .await()
+            Result.success(Unit)
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            handleFirestoreError(e, OperationType.WRITE, docPath)
+            Result.failure(e)
+        }
+    }
+
+    fun observeBlockedUsers(currentUid: String): Flow<List<BlockedUserRecord>> = flow {
+        require(currentUid.isNotBlank()) { "Current UID must not be blank." }
+        val path = COLLECTION_BLOCKED
+        emitAll(
+            db.collection(COLLECTION_BLOCKED)
+                .whereEqualTo("blockerUid", currentUid)
+                .snapshots()
+                .map { snapshot ->
+                    snapshot.toObjects(
+                        BlockedUserRecord::class.java,
+                        DocumentSnapshot.ServerTimestampBehavior.ESTIMATE
+                    ).sortedByDescending { it.createdAt ?: Timestamp(0, 0) }
+                }
+                .catch { error ->
+                    val firestoreError = generateSequence(error) { it.cause }
+                        .filterIsInstance<FirebaseFirestoreException>()
+                        .firstOrNull()
+                    if (firestoreError == null && error is CancellationException) throw error
+                    val exceptionToLog = firestoreError ?: (error as? Exception)
+                    if (exceptionToLog != null && auth?.currentUser?.uid == currentUid) {
+                        handleFirestoreError(exceptionToLog, OperationType.LIST, path)
+                    }
+                    throw error
+                }
+        )
+    }
+
+    suspend fun blockUser(targetUser: MessagingUser): Result<Unit> {
+        var docPath = COLLECTION_BLOCKED
+        return try {
+            val uid = requireUserId()
+            require(targetUser.uid.isNotBlank() && targetUser.uid != uid) {
+                "Target user UID must be a valid distinct user."
+            }
+            val blockId = buildBlockDocumentId(uid, targetUser.uid)
+            docPath = "$COLLECTION_BLOCKED/$blockId"
+            val payload = mapOf(
+                "blockerUid" to uid,
+                "blockedUid" to targetUser.uid.trim().take(128),
+                "blockedUsername" to targetUser.username.ifBlank { "creator" }.take(48),
+                "blockedDisplayName" to targetUser.displayName.ifBlank { "Pulse Creator" }.take(80),
+                "createdAt" to FieldValue.serverTimestamp()
+            )
+            db.collection(COLLECTION_BLOCKED)
+                .document(blockId)
+                .set(payload)
+                .await()
+            Result.success(Unit)
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            handleFirestoreError(e, OperationType.CREATE, docPath)
+            Result.failure(e)
+        }
+    }
+
+    suspend fun unblockUser(blockedUid: String): Result<Unit> {
+        var docPath = COLLECTION_BLOCKED
+        return try {
+            val uid = requireUserId()
+            require(blockedUid.isNotBlank() && blockedUid != uid) {
+                "Blocked user UID must be valid."
+            }
+            val blockId = buildBlockDocumentId(uid, blockedUid)
+            docPath = "$COLLECTION_BLOCKED/$blockId"
+            db.collection(COLLECTION_BLOCKED)
+                .document(blockId)
+                .delete()
+                .await()
+            Result.success(Unit)
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            handleFirestoreError(e, OperationType.DELETE, docPath)
+            Result.failure(e)
+        }
+    }
+
     companion object {
         const val COLLECTION_MESSAGING_USERS = "messaging_users"
         const val COLLECTION_DM_THREADS = "dm_threads"
         const val SUBCOLLECTION_MESSAGES = "messages"
+        const val SUBCOLLECTION_TYPING = "typing"
+        const val COLLECTION_BLOCKED = "blocked"
     }
 }

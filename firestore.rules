@@ -195,10 +195,72 @@ service cloud.firestore {
         && isValidTimestamp(data.updatedAt);
     }
 
+    function isValidTypingStatus(data, threadId, userId) {
+      return data.keys().hasAll([
+          'threadId',
+          'memberUids',
+          'userId',
+          'isTyping',
+          'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'threadId',
+          'memberUids',
+          'userId',
+          'isTyping',
+          'updatedAt'
+        ])
+        && data.threadId is string && data.threadId == threadId
+        && isValidMemberPair(data.memberUids)
+        && threadId == (data.memberUids[0] + '_' + data.memberUids[1])
+        && data.userId is string && data.userId == userId && data.userId in data.memberUids
+        && data.isTyping is bool
+        && isValidTimestamp(data.updatedAt);
+    }
+
+    function isParentThreadMember(threadId, memberUids) {
+      return exists(/databases/$(database)/documents/dm_threads/$(threadId))
+        && request.auth.uid in get(/databases/$(database)/documents/dm_threads/$(threadId)).data.memberUids
+        && memberUids == get(/databases/$(database)/documents/dm_threads/$(threadId)).data.memberUids;
+    }
+
+    function isValidBlockedUser(data, blockId) {
+      return data.keys().hasAll([
+          'blockerUid',
+          'blockedUid',
+          'blockedUsername',
+          'blockedDisplayName',
+          'createdAt'
+        ])
+        && data.keys().hasOnly([
+          'blockerUid',
+          'blockedUid',
+          'blockedUsername',
+          'blockedDisplayName',
+          'createdAt'
+        ])
+        && data.blockerUid is string && data.blockerUid.size() >= 1 && data.blockerUid.size() <= 128
+        && data.blockedUid is string && data.blockedUid.size() >= 1 && data.blockedUid.size() <= 128
+        && data.blockerUid != data.blockedUid
+        && blockId == (data.blockerUid + '_' + data.blockedUid)
+        && data.blockedUsername is string && data.blockedUsername.size() >= 1 && data.blockedUsername.size() <= 48
+        && data.blockedDisplayName is string && data.blockedDisplayName.size() >= 1 && data.blockedDisplayName.size() <= 80
+        && isValidTimestamp(data.createdAt);
+    }
+
     match /messaging_users/{userId} {
       allow get, list: if isAuthenticated();
       allow create, update: if isOwner(userId) && isValidMessagingUser(request.resource.data, userId);
       allow delete: if false;
+    }
+
+    match /blocked/{blockId} {
+      allow get, list: if isAuthenticated() && resource.data.blockerUid == request.auth.uid;
+      allow create: if isAuthenticated()
+        && request.resource.data.blockerUid == request.auth.uid
+        && isValidBlockedUser(request.resource.data, blockId);
+      allow update: if false;
+      allow delete: if isAuthenticated() && resource.data.blockerUid == request.auth.uid;
     }
 
     match /dm_threads/{threadId} {
@@ -240,6 +302,15 @@ service cloud.firestore {
         allow delete: if isAuthenticated()
           && request.auth.uid in resource.data.memberUids
           && resource.data.senderUid == request.auth.uid;
+      }
+
+      match /typing/{userId} {
+        allow get, list: if isAuthenticated() && request.auth.uid in resource.data.memberUids;
+        allow create, update: if isOwner(userId)
+          && request.auth.uid in request.resource.data.memberUids
+          && isValidTypingStatus(request.resource.data, threadId, userId)
+          && isParentThreadMember(threadId, request.resource.data.memberUids);
+        allow delete: if isOwner(userId) && request.auth.uid in resource.data.memberUids;
       }
     }
 

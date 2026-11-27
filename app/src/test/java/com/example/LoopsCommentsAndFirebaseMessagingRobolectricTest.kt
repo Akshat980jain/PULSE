@@ -352,7 +352,25 @@ class LoopsCommentsAndFirebaseMessagingRobolectricTest {
         }
 
         // 4. FirebaseAuthHelper safely initializes and tracks sign-in state
-        val authHelper = com.example.ui.firebase.FirebaseAuthHelper(context)
+        @Suppress("UNCHECKED_CAST")
+        val fakeCredentialManager = java.lang.reflect.Proxy.newProxyInstance(
+            androidx.credentials.CredentialManager::class.java.classLoader,
+            arrayOf(androidx.credentials.CredentialManager::class.java)
+        ) { _, method, args ->
+            val callback = args?.lastOrNull() as? androidx.credentials.CredentialManagerCallback<Any?, Any?>
+            when (method.name) {
+                "getCredentialAsync" -> callback?.onError(
+                    androidx.credentials.exceptions.NoCredentialException("No saved credential")
+                )
+                "clearCredentialStateAsync" -> callback?.onResult(null)
+            }
+            null
+        } as androidx.credentials.CredentialManager
+
+        val authHelper = com.example.ui.firebase.FirebaseAuthHelper(
+            context = context,
+            providedCredentialManager = fakeCredentialManager
+        )
         assertFalse(authHelper.isSignedIn)
         assertEquals(null, authHelper.currentUserIdOrNull())
         assertEquals(com.example.ui.firebase.FirebaseAuthSignInState.SignedOut, authHelper.signInState.value)
@@ -362,5 +380,166 @@ class LoopsCommentsAndFirebaseMessagingRobolectricTest {
             authHelper.signOut()
             assertEquals(com.example.ui.firebase.FirebaseAuthSignInState.SignedOut, authHelper.signInState.value)
         }
+    }
+
+    @Test
+    fun firebaseMessaging_typingIndicatorAndBlockedUsersFiltering_workEndToEnd() {
+        val currentUid = "alice_uid"
+        val bobUid = "bob_uid"
+        val now = java.util.Date()
+        val bob = MessagingUser(
+            id = bobUid,
+            uid = bobUid,
+            displayName = "Bob Park",
+            username = "bobpark"
+        )
+        val msgFromBob = DmMessage(
+            id = "m_bob",
+            threadId = "alice_uid_bob_uid",
+            memberUids = listOf(currentUid, bobUid),
+            senderUid = bobUid,
+            senderUsername = "bobpark",
+            senderDisplayName = "Bob Park",
+            text = "Hey there"
+        )
+        val msgFromCarol = DmMessage(
+            id = "m_carol",
+            threadId = "alice_uid_carol_uid",
+            memberUids = listOf(currentUid, "carol_uid"),
+            senderUid = "carol_uid",
+            senderUsername = "carol",
+            senderDisplayName = "Carol",
+            text = "Hi Alice"
+        )
+
+        // 1. Message filtering excludes blocked senders/members from appearing in threads
+        val filtered = com.example.ui.viewmodel.FirebaseMessagingViewModel.filterVisibleMessages(
+            messages = listOf(msgFromBob, msgFromCarol),
+            blockedUids = setOf(bobUid)
+        )
+        assertEquals(listOf("m_carol"), filtered.map { it.id })
+
+        // 2. Typing indicator evaluation respects other participant, blocked set, and staleness
+        val activeTyping = com.example.data.firebase.TypingStatus(
+            id = bobUid,
+            threadId = "alice_uid_bob_uid",
+            memberUids = listOf(currentUid, bobUid),
+            userId = bobUid,
+            isTyping = true,
+            updatedAt = com.google.firebase.Timestamp(now)
+        )
+        assertTrue(
+            com.example.ui.viewmodel.FirebaseMessagingViewModel.evaluateOtherParticipantTyping(
+                statuses = listOf(activeTyping),
+                currentUid = currentUid,
+                blockedUids = emptySet(),
+                nowMs = now.time + 2_000L
+            )
+        )
+        assertFalse(
+            com.example.ui.viewmodel.FirebaseMessagingViewModel.evaluateOtherParticipantTyping(
+                statuses = listOf(activeTyping),
+                currentUid = currentUid,
+                blockedUids = setOf(bobUid),
+                nowMs = now.time + 2_000L
+            )
+        )
+        assertFalse(
+            com.example.ui.viewmodel.FirebaseMessagingViewModel.evaluateOtherParticipantTyping(
+                statuses = listOf(activeTyping),
+                currentUid = currentUid,
+                blockedUids = emptySet(),
+                nowMs = now.time + 20_000L
+            )
+        )
+
+        // 3. UI shows live typing indicator banner, block dialog, and blocked users sheet
+        val blockedLog = mutableListOf<String>()
+        val unblockedLog = mutableListOf<String>()
+        val draftEvents = mutableListOf<String>()
+
+        composeRule.mainClock.autoAdvance = false
+        composeRule.setContent {
+            var activeThreadId by remember { mutableStateOf<String?>("alice_uid_bob_uid") }
+            var activeTarget by remember { mutableStateOf<MessagingUser?>(bob) }
+            var blockedList by remember {
+                mutableStateOf(
+                    listOf(
+                        com.example.data.firebase.BlockedUserRecord(
+                            id = "${currentUid}_carol_uid",
+                            blockerUid = currentUid,
+                            blockedUid = "carol_uid",
+                            blockedUsername = "carol",
+                            blockedDisplayName = "Carol"
+                        )
+                    )
+                )
+            }
+            PulseTheme {
+                FirebaseMessagesWorkspace(
+                    currentUserId = currentUid,
+                    currentUserProfile = MessagingUser(
+                        id = currentUid,
+                        uid = currentUid,
+                        displayName = "Alice",
+                        username = "alice"
+                    ),
+                    directoryState = MessagingUiState.Success(listOf(bob)),
+                    threadsState = MessagingUiState.Success(emptyList()),
+                    activeThreadId = activeThreadId,
+                    activeTargetUser = activeTarget,
+                    activeMessagesState = MessagingUiState.Success(listOf(msgFromBob)),
+                    blockedUsers = blockedList,
+                    isOtherParticipantTyping = true,
+                    isSending = false,
+                    transientError = null,
+                    onSelectUserForChat = {},
+                    onSelectThread = {},
+                    onCloseActiveThread = {
+                        activeThreadId = null
+                        activeTarget = null
+                    },
+                    onDraftTextChanged = { draftEvents.add(it) },
+                    onClearTyping = {},
+                    onSendMessage = {},
+                    onToggleLikeMessage = { _, _ -> },
+                    onBlockUser = { target ->
+                        blockedLog.add(target.uid)
+                        activeThreadId = null
+                        activeTarget = null
+                    },
+                    onUnblockUser = { uid ->
+                        unblockedLog.add(uid)
+                        blockedList = blockedList.filterNot { it.blockedUid == uid }
+                    },
+                    onDismissError = {},
+                    onSignOutMessaging = {}
+                )
+            }
+        }
+        composeRule.mainClock.advanceTimeBy(300L)
+
+        // Live typing indicator visible in header & animated banner
+        composeRule.onNodeWithTag("firebase_header_typing_status").assertTextContains("Typing…", substring = true)
+        composeRule.onNodeWithTag("firebase_typing_indicator").assertIsDisplayed()
+
+        // Typing into composer broadcasts draft changes
+        composeRule.onNodeWithTag("firebase_message_input").performTextInput("On my way")
+        composeRule.mainClock.advanceTimeBy(100L)
+        assertTrue(draftEvents.isNotEmpty())
+
+        // Blocking Bob opens confirm dialog and returns to inbox
+        composeRule.onNodeWithTag("firebase_block_user_button").performClick()
+        composeRule.mainClock.advanceTimeBy(100L)
+        composeRule.onNodeWithTag("firebase_block_confirm_dialog").assertIsDisplayed()
+        composeRule.onNodeWithTag("firebase_confirm_block_button").performClick()
+        composeRule.mainClock.autoAdvance = true
+        assertEquals(listOf(bobUid), blockedLog)
+
+        // Blocked users management sheet in inbox allows unblocking
+        composeRule.onNodeWithTag("firebase_blocked_users_button").performClick()
+        composeRule.onNodeWithTag("firebase_blocked_users_sheet").assertIsDisplayed()
+        composeRule.onNodeWithTag("firebase_unblock_user_carol_uid").performClick()
+        assertEquals(listOf("carol_uid"), unblockedLog)
     }
 }
